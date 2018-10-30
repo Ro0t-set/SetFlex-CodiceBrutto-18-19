@@ -45,15 +45,24 @@ window.onload=function(){
 <div class="wrapper">
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Corsi</h3>
+                <h3>Menu</h3>
             </div>
 
             <ul class="list-unstyled components">
-                <p>Filtra per: </p>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'privata' %}">Home</a>
+                </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'privata' %}">I miei corsi</a>
                 </li>
-                <li class="active">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'privata' %}">Tutti i corsi</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'privata' %}">Crea un corso</a>
+                </li>
+
+                <li class="nav-item">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Disposizioni Classi</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li class="nav-item active" id="homelink">
@@ -73,6 +82,9 @@ window.onload=function(){
                       </li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Sviluppatori</a>
+                </li>
             </ul>
 
             <ul class="list-unstyled CTAs">
@@ -80,7 +92,7 @@ window.onload=function(){
                     <a class="article" href="/mappe/">Mappe</a>
                 </li>
                 <li>
-                    <a class="article" href="/informazioni/">Aiuto</a>
+                    <a class="nav-link" href="{% url 'help' %}">Help</a>
                 </li>
                 <li>
                     <a class="article" href="/informazioni/">Informazioni</a>
