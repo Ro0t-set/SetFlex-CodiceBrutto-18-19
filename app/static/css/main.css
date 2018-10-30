@@ -14,6 +14,11 @@
     table-layout: fixed;
   }
 
+body, html, .wrapper {
+  background-image: url("../sfondo.png"); 
+  background-repeat: repeat;
+}
+
 /* header file */
 
 .centered-text {
@@ -24,7 +29,6 @@
 .header {
 
     color: white;
-	background-color: rgb(77, 108, 120);
 	padding: 30px 20px;
 
 	display: grid;
