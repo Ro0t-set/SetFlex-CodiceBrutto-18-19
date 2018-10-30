@@ -1,0 +1,30 @@
+{% extends 'corsi/base.html' %}
+
+{% block content %}
+
+
+<h1 class="titoli" style="font-family: 'Permanent Marker', cursive;">Settimana Flessibile</h1>
+<h3 style="color:red;">Info:</h3>
+  <p>1)Per iscriverti ai corsi vai sulla sezione "i miei corsi"</p>
+  <p>2)Cliccando sull'icona "modifica" visualizzerai tutti i corsi relativi alla fascia selezionata</p>
+<p>3)Seleziona il corso che più ti interessa e iscriviti</p>
+<p>4)Ripeti l'operazione per ogni fascia indicata</p>
+<p>5)Nel caso in cui dovessi riscontrare difficoltà nelle iscrizioni o problemi di qualsiasi genere, puoi contattare lo Staff della settimana flessibile tramite la pagina "Help"</p>
+<p>6)Provvederemo a rispondere ad ogni singola richiesta tramite la mail che inserirai</p>
+<br>
+{%for convalida in convalida%}
+{%if convalida.convalida == False%}
+  <form method="GET" class="post-form">
+    {% csrf_token %}
+<h3>Autorizzazioni:</h3>
+{{convalida.corso}}
+
+<a type="submit" id="bottone{{approvazione}}" class="save btn btn-primary" href="?idcorso={{convalida.corso_id}}" name="{{convalida.corso_id}}">Accetto</a>
+
+</form>
+<br>
+<br>
+  {%endif%}
+{%endfor%}
+
+{% endblock content %}
