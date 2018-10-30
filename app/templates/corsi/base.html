@@ -50,24 +50,27 @@ window.onload=function(){
 
             <ul class="list-unstyled components">
                 <p>Filtra per: </p>
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Giorno</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        {% for giorno in giorni %}
-                        <li>
-                            <a href="/giorni/{{giorno}}">{{giorno}}</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'privata' %}">I miei corsi</a>
                 </li>
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Categoria</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                      {% for categoria in categorie %}
-                        <li>
-                            <a href="/categorie/{{categoria}}">{{categoria}}</a>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Disposizioni Classi</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li class="nav-item active" id="homelink">
+                          <a class="dropdown-item" href="{% url 'disp_classi' %}">Disposizione Aule</a>
                         </li>
-                      {% endfor %}
+                        <li class="nav-item active" id="homelink">
+                        <a class="dropdown-item" href="{% url 'disp_classi_informatica' %}">Disposizione Informatica</a>
+                      </li>
+                        <li class="nav-item active" id="homelink">
+                        <a class="dropdown-item" href="{% url 'disp_classi_magna' %}">Disposizione Magna</a>
+                      </li>
+                      <li class="nav-item active" id="homelink">
+                        <a class="dropdown-item" href="{% url 'disp_classi_palestra' %}">Disposizione Palestra</a>
+                      </li>
+                        <li class="nav-item active" id="homelink">
+                        <a class="dropdown-item" href="{% url 'disp_classi_arte' %}">Disposizione Arte</a>
+                      </li>
                     </ul>
                 </li>
             </ul>
@@ -75,6 +78,9 @@ window.onload=function(){
             <ul class="list-unstyled CTAs">
                 <li>
                     <a class="article" href="/mappe/">Mappe</a>
+                </li>
+                <li>
+                    <a class="article" href="/informazioni/">Aiuto</a>
                 </li>
                 <li>
                     <a class="article" href="/informazioni/">Informazioni</a>
