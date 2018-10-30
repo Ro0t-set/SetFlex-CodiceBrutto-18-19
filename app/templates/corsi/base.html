@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <link rel="stylesheet" href="/static/sfondo.css" >
         <link rel="stylesheet" href="{% static 'css/main.css' %}" integrity="">
+        <link rel="stylesheet" href="{% static 'css/sidebar.css'%}"
 
         <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -41,61 +42,60 @@ window.onload=function(){
 }
 </script>
 
-<nav id="sidebar">
-    <div class="sidebar-header">
-        <h3>Corsi</h3>
+<div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Corsi</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>Filtra per: </p>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Giorno</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        {% for giorno in giorni %}
+                        <li>
+                            <a href="/giorni/{{giorno}}">{{giorno}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Categoria</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                      {% for categoria in categorie %}
+                        <li>
+                            <a href="/categorie/{{categoria}}">{{categoria}}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <a class="article" href="/mappe/">Mappe</a>
+                </li>
+                <li>
+                    <a class="article" href="/informazioni/">Informazioni</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="menuButton" class="btn btn-info" onclick="show_menu()">
+                        <i class="fas fa-align-left"></i>
+                        <span>Menu</span>
+                    </button>
+
+                </div>
+            </nav>
+        </div>
     </div>
-
-    <ul class="list-unstyled components">
-        <p>Filtra per: </p>
-        <li class="active">
-            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Giorno</a>
-            <ul class="collapse list-unstyled" id="homeSubmenu">
-                {% for giorno in giorni %}
-                <li>
-                    <a href="/giorni/{{giorno}}">{{giorno}}</a>
-                </li>
-                {% endfor %}
-            </ul>
-        </li>
-        <li>
-            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Categoria</a>
-            <ul class="collapse list-unstyled" id="pageSubmenu">
-              {% for categoria in categorie %}
-                <li>
-                    <a href="/categorie/{{categoria}}">{{categoria}}</a>
-                </li>
-              {% endfor %}
-            </ul>
-        </li>
-    </ul>
-
-    <ul class="list-unstyled CTAs">
-        <li>
-            <a class="article" href="/mappe/">Mappe</a>
-        </li>
-        <li>
-            <a class="article" href="/informazioni/">Informazioni</a>
-        </li>
-    </ul>
-</nav>
-
-<div id="content">
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-
-          <button type="button" id="menuButton" class="btn btn-info" onclick="show_menu()">
-              <i class="fas fa-align-left"></i>
-              <span>Menu</span>
-          </button>
-
-
-      </div>
-  </nav>
-  </div>
-
-
 
 
 <!--
