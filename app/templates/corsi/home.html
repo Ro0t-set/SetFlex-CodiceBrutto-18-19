@@ -18,6 +18,7 @@
     {% csrf_token %}
 <h3>Autorizzazioni:</h3>
 {{convalida.corso}}
+{{convalida.corso_id}}
 
 <a type="submit" id="bottone{{approvazione}}" class="save btn btn-primary" href="?idcorso={{convalida.corso_id}}" name="{{convalida.corso_id}}">Accetto</a>
 

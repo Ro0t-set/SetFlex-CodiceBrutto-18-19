@@ -15,8 +15,9 @@
   }
 
 body, html, .wrapper {
-  background-image: url("../sfondo.png"); 
-  background-repeat: repeat;
+  background:#fff;
+  color: black;
+
 }
 
 /* header file */

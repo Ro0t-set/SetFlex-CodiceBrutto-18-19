@@ -20,6 +20,11 @@ class CreaCorsi(forms.ModelForm):
             'classi_autori': forms.TextInput(attrs={'class': 'form-control'}),
             'esperti_esterni': forms.TextInput(attrs={'class': 'form-control'}),
             'descrizione': forms.Textarea(attrs={'class': 'form-control', 'rows':'3'}),
+            'studente_referente1': forms.TextInput(attrs={'class': 'form-control'}),
+            'studente_referente2': forms.TextInput(attrs={'class': 'form-control'}),
+            'studente_referente3': forms.TextInput(attrs={'class': 'form-control'}),
+            'studente_referente4': forms.TextInput(attrs={'class': 'form-control'}),
+            'studente_referente5': forms.TextInput(attrs={'class': 'form-control'}),
 
         }
 

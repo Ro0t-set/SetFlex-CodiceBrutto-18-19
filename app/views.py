@@ -33,6 +33,8 @@ from django.contrib.auth.validators import ASCIIUsernameValidator
 from django.template.loader import render_to_string
 from django.http import Http404
 from django.contrib import messages
+from . import IscrizioneReferenti
+
 @csrf_protect
 
 def errore(request):
@@ -59,50 +61,6 @@ def disp_classi_magna(request):
 def disp_classi_palestra(request):
     return render(request, 'corsi/disp_classi_palestra.html')
 
-@login_required(login_url='/login/')
-def crea(request):
-    convalida= ConvalidaCorsi
-    if request.method == "POST":
-
-        form = CreaCorsi(request.POST)
-
-        if form.is_valid():
-
-            corso = form.save(commit=False)
-            #convalida = convalida.save(commit=False)
-
-            corso.author = request.user
-            corso.published_date = timezone.now()
-
-
-            subject, from_email, to = 'corsi', 'settimanaflessibile@gmail.com', 'settimanaflessibile@gmail.com'
-            text_content = '456'
-            html_content =  ( str(form) )
-
-
-
-
-
-            msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-            msg.attach_alternative(html_content, "text/html")
-            corso.save()
-
-            #msg.send()
-            for i in range(1,5):
-                i=str(i)
-                if eval('corso.studente_referente'+i) != None:
-                    convalida=Approvazione.objects.create(corso_id= corso.id)
-                    convalida.alunno = eval('corso.studente_referente'+i)
-                    convalida.save()
-
-
-            return redirect('successo')
-
-    else:
-        form = CreaCorsi()
-
-
-    return render(request, 'corsi/crea.html', {'form' : form , 'convalida':convalida})
 
 
 @login_required(login_url='/login/')
@@ -110,20 +68,20 @@ def home (request):
     convalida=Approvazione.objects.filter(alunno=request.user)
 
     if request.method == "GET":
+
         try:
             corso_da_approvare_id = request.GET.get("idcorso")
             corso_da_approvare = Approvazione.objects.get(corso_id=corso_da_approvare_id, alunno=request.user, convalida = False)
             corso_da_approvare.convalida=True
             corso_da_approvare.save()
+            IscrizioneReferenti.iscrizioniReferenti(corso_da_approvare_id, request.user)
             print('bella')
             convalide=Approvazione.objects.filter(corso_id=corso_da_approvare_id)
             convalide= convalide.convalida
             print('bella zzi')
             print(convalide)
-
         except:
             pass
-
     return render(request, 'corsi/home.html', {'convalida':convalida})
 
     # approvazione=[]
@@ -513,3 +471,54 @@ def help(request):
     else:
         form = Mail()
     return render(request, 'corsi/help.html', {'form': form})
+
+
+
+
+
+
+
+@login_required(login_url='/login/')
+def crea(request):
+    convalida= ConvalidaCorsi
+    if request.method == "POST":
+
+        form = CreaCorsi(request.POST)
+        print(form)
+        if form.is_valid():
+
+            corso = form.save(commit=False)
+            #convalida = convalida.save(commit=False)
+
+            corso.author = request.user
+            corso.published_date = timezone.now()
+
+
+            subject, from_email, to = 'corsi', 'settimanaflessibile@gmail.com', 'settimanaflessibile@gmail.com'
+            text_content = '456'
+            html_content =  ( str(form) )
+
+
+
+
+
+            msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+            msg.attach_alternative(html_content, "text/html")
+            corso.save()
+            #msg.send()
+            for i in range(1,5):
+                i=str(i)
+                if eval('corso.studente_referente'+i) != None:
+                    convalida=Approvazione.objects.create(corso_id= corso.id)
+                    convalida.alunno = eval('corso.studente_referente'+i)
+                    convalida.save()
+
+
+            return redirect('successo')
+
+    else:
+        form = CreaCorsi()
+
+
+
+    return render(request, 'corsi/crea.html', {'form' : form , 'convalida':convalida})
