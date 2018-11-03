@@ -1,5 +1,6 @@
 
 {% load staticfiles %}
+
 <html>
     <head>
         <title>SettimanaFlessibile</title>
@@ -22,7 +23,7 @@
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
      <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110453102-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -50,16 +51,13 @@ window.onload=function(){
 
             <ul class="list-unstyled components">
                 <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'privata' %}">Home</a>
+                  <a class="nav-link" href="">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'privata' %}">I miei corsi</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'privata' %}">Tutti i corsi</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'privata' %}">Crea un corso</a>
+                  <a class="nav-link" href="{% url 'crea' %}">Crea un corso</a>
                 </li>
 
                 <li class="nav-item">
@@ -169,62 +167,19 @@ window.onload=function(){
       <li class="nav-item">
         <a class="nav-link" href="{% url 'help' %}">Help</a>
       </li>
-           <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Sviluppatori
-  </a>
-  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <a class="dropdown-item" href="https://twitter.com/TommasoPatriti">Sviluppatore: Tommaso Patriti</a>
-    <a class="dropdown-item" href="https://www.instagram.com/federicobravetti/">Grafico(logo, icone): Federico Bravetti</a>
-</li>
-</div>
-    </ul>
-    <span class="navbar-text">
-      {% if user.is_authenticated %}
-      {{user}}
-      <a href="{% url 'logout' %}?next=/">|  logout</a>
-      {%else%}
-      <a href="/login">login</a>
-      {%endif%}
-    </span>
-  </div>
-</nav>
-
-  {% if messages %}
-<br>
-<br>
-<div class="alert alert-danger coll-7" role="alert">
 
 
-  {% for message in messages %}
-  <h4>{% if message.tags %} {% endif %}{{ message }}</h4>
-
-
-</div>
-{%endfor%}
-{% endif %}
-
-        <div class="content container">
-            <div class="row">
-                <div class="w-100 p-3">
-
-
-<br><br>
-                </div>
-            </div>
-
-        </div>
 
 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    </body>
-    <script type="text/javascript">
-        function show_menu() {
-          $('#sidebar').toggleClass('active');
-        }
-        console.log('Whooo, hai scoperto la console del sito! Chi sei, un hacker?')
-        console.log('Nel caso ti stessero venendo strane idee, sappi che il server esegue verifiche server-side contro SQL-injection, brute force e attacchi DDOS.')
-        console.log('P.S: if (sei un programmatore && vorresti aiutare a sviluppare la prossima settimana flessibile) {iscriviti al corso: "come è stato fatto questo sito"}.')
-    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
+  <script type="text/javascript">
+      function show_menu() {
+        $('#sidebar').toggleClass('active');
+      }
+      console.log('Whooo, hai scoperto la console del sito! Chi sei, un hacker?')
+      console.log('Nel caso ti stessero venendo strane idee, sappi che il server esegue verifiche server-side contro SQL-injection, brute force e attacchi DDOS.')
+      console.log('P.S: if (sei un programmatore && vorresti aiutare a sviluppare la prossima settimana flessibile) {iscriviti al corso: "come è stato fatto questo sito"}.')
+  </script>
 </html>
