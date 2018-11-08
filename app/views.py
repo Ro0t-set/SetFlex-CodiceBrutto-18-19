@@ -484,12 +484,20 @@ def crea(request):
     if request.method == "POST":
 
         form = CreaCorsi(request.POST)
-        print(form)
+
         if form.is_valid():
+            print("PAssato")
 
             corso = form.save(commit=False)
             #convalida = convalida.save(commit=False)
-
+            corso.studente_referente1= (User.objects.get(username= request.POST.get('referente1')))
+            try:
+                corso.studente_referente2= (User.objects.get(username= request.POST.get('referente2')))
+                corso.studente_referente3= (User.objects.get(username= request.POST.get('referente3')))
+                corso.studente_referente4= (User.objects.get(username= request.POST.get('referente4')))
+                corso.studente_referente5= (User.objects.get(username= request.POST.get('referente5')))
+            except:
+                pass
             corso.author = request.user
             corso.published_date = timezone.now()
 
@@ -497,10 +505,6 @@ def crea(request):
             subject, from_email, to = 'corsi', 'settimanaflessibile@gmail.com', 'settimanaflessibile@gmail.com'
             text_content = '456'
             html_content =  ( str(form) )
-
-
-
-
 
             msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
             msg.attach_alternative(html_content, "text/html")

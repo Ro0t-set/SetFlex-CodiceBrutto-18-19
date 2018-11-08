@@ -10,21 +10,21 @@ from .models import Corso, Iscrizione, Approvazione
 
 
 
-class CreaCorsi(forms.ModelForm):
+class CreaCorsi(forms.ModelForm, forms.Form):
+    referente1 = forms.CharField(label='referente1', max_length="100", widget=forms.TextInput(attrs={'class': 'form-control form-control-lg'}))
+    referente2 = forms.CharField(required = False,label='referente2', max_length="100", widget=forms.TextInput(attrs={'class': 'form-control form-control-lg'}))
+    referente3 = forms.CharField(required = False,label='referente3', max_length="100", widget=forms.TextInput(attrs={'class': 'form-control form-control-lg'}))
+    referente4 = forms.CharField(required = False,label='referente4', max_length="100", widget=forms.TextInput(attrs={'class': 'form-control form-control-lg'}))
+    referente5 = forms.CharField(required = False,label='referente5', max_length="100", widget=forms.TextInput(attrs={'class': 'form-control form-control-lg'}))
     class Meta:
         model = Corso
-        fields = ['titolo','esperti_esterni','studente_referente1', 'studente_referente2','studente_referente3','studente_referente4','studente_referente5','classi_autori', 'descrizione','aule', 'progressivo','f1','f2','f3','f4','f5','f6','f7','f8','f9' ]
+        fields = ['titolo','esperti_esterni','classi_autori', 'descrizione','aule', 'progressivo','f1','f2','f3','f4','f5','f6','f7','f8','f9' ]
         widgets = {
             'titolo': forms.TextInput(attrs={'class': 'form-control'}),
             #'studenti_referenti': forms.TextInput(attrs={'class': 'form-control'}),
             'classi_autori': forms.TextInput(attrs={'class': 'form-control'}),
             'esperti_esterni': forms.TextInput(attrs={'class': 'form-control'}),
             'descrizione': forms.Textarea(attrs={'class': 'form-control', 'rows':'3'}),
-            'studente_referente1': forms.TextInput(attrs={'class': 'form-control'}),
-            'studente_referente2': forms.TextInput(attrs={'class': 'form-control'}),
-            'studente_referente3': forms.TextInput(attrs={'class': 'form-control'}),
-            'studente_referente4': forms.TextInput(attrs={'class': 'form-control'}),
-            'studente_referente5': forms.TextInput(attrs={'class': 'form-control'}),
 
         }
 
