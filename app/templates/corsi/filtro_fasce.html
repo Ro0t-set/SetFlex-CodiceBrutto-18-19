@@ -8,8 +8,21 @@ txt = document.getElementById("data").value;
 document.getElementById("data").value = "";
 if(!self.find(txt) && txt != '')
 alert('Data non trovata');
+
+
+  <h3>Per effettuare la ricerca di un corso pigiare la combinazione di tasti [ctrl+f], se hai un pc apple usa [cmd+f]</h3>
+  <script>
+    function Search() {
+      txt = document.getElementById("data").value;
+      document.getElementById("data").value = "";
+      if (!self.find(txt) && txt != '')
+        alert('Data non trovata');
+    }
+  </script>
+
   <p>numero corsi tot: {{corsi.count}}</p>
   {%if fascia == "f1"%} <h3>Martedì 3-4 ora</h3> 
+  {%if fascia == "f1"%} <h3>Martedì 3-4 ora</h3>
   {%elif fascia == "f2"%} <h3>Martedì 5-6</h3>
   {%elif fascia == "f3"%} <h3>Mercoledì 3-4</h3>
   {%elif fascia == "f4"%} <h3>Mercoledì 5-6</h3>
