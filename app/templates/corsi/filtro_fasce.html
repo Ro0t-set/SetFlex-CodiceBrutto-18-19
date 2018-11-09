@@ -2,7 +2,6 @@
 
 {% block content %}
 
-<div class="container">
 
   <h3>Per effettuare la ricerca di un corso pigiare la combinazione di tasti [ctrl+f], se hai un pc apple usa [cmd+f]</h3>
   <script>
@@ -96,13 +95,12 @@
             {% csrf_token %}
 
             <center><a href="{%url 'edit_iscrizioni' corso.id  %}?f={{fascia}}" class="btn btn-primary">Info e Iscriviti</a></center>
+            <br>
           </form>
           </div>
 
         <br>
-        <br>
     </div>
 
   {% endfor %}
-  </div>
 {% endblock content %}
