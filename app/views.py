@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Corso, Iscrizione, Approvazione
+from .models import Corso, Iscrizione, Approvazione, Comunicazione
 from django.shortcuts import get_object_or_404, render
 from .forms import CreaCorsi, IscrizioneForm, Mail, CercaCorsi, ConvalidaCorsi
 from django.shortcuts import redirect
@@ -66,6 +66,7 @@ def disp_classi_palestra(request):
 @login_required(login_url='/login/')
 def home (request):
     convalida=Approvazione.objects.filter(alunno=request.user)
+    comunicazioni= Comunicazione.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
 
     if request.method == "GET":
 
@@ -80,7 +81,7 @@ def home (request):
             print(convalide)
         except:
             pass
-    return render(request, 'corsi/home.html', {'convalida':convalida})
+    return render(request, 'corsi/home.html', {'convalida':convalida, 'comunicazioni':comunicazioni})
 
 
 @login_required(login_url='/login/')
@@ -427,11 +428,6 @@ def help(request):
     else:
         form = Mail()
     return render(request, 'corsi/help.html', {'form': form})
-
-
-@login_required(login_url='/login/')
-def crea(request):
-    return render(request, 'corsi/comunicazioni.html', {})
 
 
 

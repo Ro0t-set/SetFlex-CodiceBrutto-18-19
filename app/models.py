@@ -6,6 +6,26 @@ from django.core.mail import EmailMessage
 
 
 # Create your models here.
+
+class Comunicazione(models.Model):
+    titolo= models.CharField(max_length=100, default="")
+    comunicazione= models.TextField(max_length=1000)
+    def __str__(self):
+        return str(self.titolo)
+
+    class Meta:
+        verbose_name = "Comunicazione"
+        verbose_name_plural = "Comunicazioni"
+
+    published_date = models.DateTimeField(
+        default=timezone.now)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+
+
 class Aula(models.Model):
     aule= models.CharField(max_length=100, default="")
     max_iscritti= models.IntegerField(default=0)

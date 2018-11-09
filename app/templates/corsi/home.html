@@ -28,4 +28,9 @@
   {%endif%}
 {%endfor%}
 
+{%for comunicazioni in comunicazioni%}
+<h4>{{comunicazioni.titolo}}</h4>
+<p>{{comunicazioni.comunicazione}}</p>
+{%endfor%}
+
 {% endblock content %}
