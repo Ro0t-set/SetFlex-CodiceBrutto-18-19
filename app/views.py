@@ -75,10 +75,8 @@ def home (request):
             corso_da_approvare.convalida=True
             corso_da_approvare.save()
             IscrizioneReferenti.iscrizioniReferenti(corso_da_approvare_id, request.user)
-            print('bella')
             convalide=Approvazione.objects.filter(corso_id=corso_da_approvare_id)
             convalide= convalide.convalida
-            print('bella zzi')
             print(convalide)
         except:
             pass
@@ -486,39 +484,49 @@ def crea(request):
         form = CreaCorsi(request.POST)
 
         if form.is_valid():
-            print("PAssato")
-
             corso = form.save(commit=False)
-            #convalida = convalida.save(commit=False)
-            corso.studente_referente1= (User.objects.get(username= request.POST.get('referente1')))
             try:
-                corso.studente_referente2= (User.objects.get(username= request.POST.get('referente2')))
-                corso.studente_referente3= (User.objects.get(username= request.POST.get('referente3')))
-                corso.studente_referente4= (User.objects.get(username= request.POST.get('referente4')))
-                corso.studente_referente5= (User.objects.get(username= request.POST.get('referente5')))
+                corso.studente_referente1= (User.objects.get(username= request.POST.get('referente1')))
+                correttezza_dati = True
             except:
-                pass
-            corso.author = request.user
-            corso.published_date = timezone.now()
+                correttezza_dati = False
+                messages.error(request, "Utente '"+request.POST.get('referente1')+"' non trovato!")
 
-
-            subject, from_email, to = 'corsi', 'settimanaflessibile@gmail.com', 'settimanaflessibile@gmail.com'
-            text_content = '456'
-            html_content =  ( str(form) )
-
-            msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-            msg.attach_alternative(html_content, "text/html")
-            corso.save()
-            #msg.send()
-            for i in range(1,5):
+            for i in range(2,5):
                 i=str(i)
-                if eval('corso.studente_referente'+i) != None:
-                    convalida=Approvazione.objects.create(corso_id= corso.id)
-                    convalida.alunno = eval('corso.studente_referente'+i)
-                    convalida.save()
+                if (request.POST.get('referente'+i)) != "" and correttezza_dati == True:
+                    try:
+                        studente=eval('corso.studente_referente'+i)
+                        studente= (User.objects.get(username= request.POST.get('referente'+i)))
+                    except:
+                        messages.error(request, "Utente '"+request.POST.get('referente'+i)+"' non trovato!")
+                        correttezza_dati = False
+                        break
+
+            if correttezza_dati == True:
+                corso.author = request.user
+                corso.published_date = timezone.now()
+                subject, from_email, to = 'corsi', 'settimanaflessibile@gmail.com', 'settimanaflessibile@gmail.com'
+                text_content = '456'
+                html_content =  ( str(form) )
+
+                msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+                msg.attach_alternative(html_content, "text/html")
+                corso.save()
+                #msg.send()
+
+                for i in range(1,5):
+                    i=str(i)
+                    if eval('corso.studente_referente'+i) != None:
+                        convalida=Approvazione.objects.create(corso_id= corso.id)
+                        convalida.alunno = eval('corso.studente_referente'+i)
+                        convalida.save()
+
+                return redirect('successo')
 
 
-            return redirect('successo')
+
+
 
     else:
         form = CreaCorsi()
