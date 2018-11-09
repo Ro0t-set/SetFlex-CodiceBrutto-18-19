@@ -82,48 +82,6 @@ def home (request):
             pass
     return render(request, 'corsi/home.html', {'convalida':convalida})
 
-    # approvazione=[]
-    # for i in range(1,5):
-    #     i=str(i)
-    #     try:
-    #         selezione_della_approvazione= str(eval('Corso.objects.get(studente_referente'+i+'=request.user)'))
-    #         approvazione.append(selezione_della_approvazione)
-    #
-    #     except:
-    #         pass
-    #
-    #
-    #
-    # if request.method == "POST":
-    #     corso_da_approvare = str(request.POST.get("name"))
-    #     print(corso_da_approvare)
-    #     ccorso_convalidato= eval('Corso.objects.get(titolo='+corso_da_approvare+')')
-    #     form = CreaCorsi(request.POST, instance = corso_da_approvare)
-    #     if form.is_valid():
-    #         print("cazzo")
-    #         conferma = form.save(commit=False)
-    #         conferma.save()
-    #
-    # else:
-    #     form=CreaCorsi(instance = corso_da_approvare)
-
-
-
-    # for approvazione in approvazione:
-    #     nome_corso, numero_corso = approvazione.split('-')
-    #     print(nome_corso)
-
-
-        # id_referente = str(request.GET.get("idreferente"))
-        # if id_referente != "None":
-        #     corso_convalidato=(eval('Corso.objects.get(studente_referente'+id_referente+'=request.user)'))
-        #     corso_convalidato=eval('corso_convalidato.convalida'+id_referente)
-        #     print(corso_convalidato)
-        #     corso_convalidato = True
-        #     print(corso_convalidato)
-        #     corso_convalidato.save(commit=False)
-
-
 
 @login_required(login_url='/login/')
 def tabelle (request):
@@ -471,7 +429,9 @@ def help(request):
     return render(request, 'corsi/help.html', {'form': form})
 
 
-
+@login_required(login_url='/login/')
+def crea(request):
+    return render(request, 'corsi/comunicazioni.html', {})
 
 
 
