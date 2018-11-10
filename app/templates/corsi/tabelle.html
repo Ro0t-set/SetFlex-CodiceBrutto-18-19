@@ -14,27 +14,7 @@
     <p>{{ ripetiziones }} </p>
 
     <table class="table table-striped">
-      <thead>
-        <!--
-        <tr>
-          <th scope="col">Titolo</th>
-          <th scope="col">Autori</th>
-          <th scope="col">Sezione Autori</th>
-          <th scope="col">Classe Richiesta</th>
-          <th scope="col">Progressivo?</th>
-          <th scope="col">f1({{contatore.0}})</th>
-          <th scope="col">f2({{contatore.1}})</th>
-          <th scope="col">f3({{contatore.2}})</th>
-          <th scope="col">f4({{contatore.3}})</th>
-          <th scope="col">f5({{contatore.4}})</th>
-          <th scope="col">f6({{contatore.5}})</th>
-          <th scope="col">f7({{contatore.6}})</th>
-          <th scope="col">f8({{contatore.7}})</th>
-          <th scope="col">f9({{contatore.8}})</th>
-        </tr>
-        -->
-      </thead>
-    <tbody>
+
     {% for corso in corsi%}
     <tr>
       <table class="table table-striped">
@@ -53,23 +33,10 @@
             <tr><td><center>f1: {% if corso.f1 %} ✅ {%else%} ❌ {% endif %}</center></td><td><center>f3: {% if corso.f3 %} ✅ {%else%} ❌ {% endif %}</center></td><td><center>f5: {% if corso.f5 %} ✅ {%else%} ❌ {% endif %}</center></td><td><center>f8: {% if corso.f8 %} ✅ {%else%} ❌ {% endif %}<center></td></tr>
             <tr><td><center>f2: {% if corso.fq %} ✅ {%else%} ❌ {% endif %}</center></td><td><center>f4: {% if corso.f4 %} ✅ {%else%} ❌ {% endif %}</center></td><td><center>f6: {% if corso.f6 %} ✅ {%else%} ❌ {% endif %}</center></td><td><center>f9: {% if corso.f9 %} ✅ {%else%} ❌ {% endif %}<center></td></tr>
           </table>
-          <!--
-        </div>
-        <div class="pure-u-1-1 pure-u-md-1-4 pure-u-sm-1-1 pure-u-lg-1-4 pure-u-xl-1-12">f1: {% if corso.f1 %} ✅ {%else%} ❌ {% endif %}</div>
-        <div class="pure-u-1-1 pure-u-md-1-4 pure-u-sm-1-1 pure-u-lg-1-4 pure-u-xl-1-12">f2: {% if corso.f2 %} ✅ {%else%} ❌ {% endif %}</div>
-        <div class="pure-u-1-1 pure-u-md-1-4 pure-u-sm-1-1 pure-u-lg-1-4 pure-u-xl-1-12">f3: {% if corso.f3 %} ✅ {%else%} ❌ {% endif %}</div>
-        <div class="pure-u-1-1 pure-u-md-1-4 pure-u-sm-1-1 pure-u-lg-1-4 pure-u-xl-1-12">f4: {% if corso.f4 %} ✅ {%else%} ❌ {% endif %}</div>
-        <div class="pure-u-1-1 pure-u-md-1-4 pure-u-sm-1-1 pure-u-lg-1-4 pure-u-xl-1-12">f5: {% if corso.f5 %} ✅ {%else%} ❌ {% endif %}</div>
-        <div class="pure-u-1-1 pure-u-md-1-4 pure-u-sm-1-1 pure-u-lg-1-4 pure-u-xl-1-12">f6: {% if corso.f6 %} ✅ {%else%} ❌ {% endif %}</div>
-        <div class="pure-u-1-1 pure-u-md-1-4 pure-u-sm-1-1 pure-u-lg-1-4 pure-u-xl-1-12">f7:{% if corso.f7 %} ✅ {%else%} ❌ {% endif %}</div>
-        <div class="pure-u-1-1 pure-u-md-1-4 pure-u-sm-1-1 pure-u-lg-1-4 pure-u-xl-1-12">f8: {% if corso.f8 %} ✅ {%else%} ❌ {% endif %}</div>
-        <div class="pure-u-1-1 pure-u-md-1-4 pure-u-sm-1-1 pure-u-lg-1-4 pure-u-xl-1-12">f9: {% if corso.f9 %} ✅ {%else%} ❌ {% endif %}</div>
-        -->
       </table>
       <div class="line"></div>
     {% endfor %}
   </tr>
-</tbody>
 </table>
 <br>
 <br>
