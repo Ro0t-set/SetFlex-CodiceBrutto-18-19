@@ -296,15 +296,10 @@ def edit_iscrizioni(request, corso_id):
 @login_required(login_url='/login/')
 def filtro_fasce(request):
 
-    pieno="0"
     corsi=request.GET.get("f")
     form = CercaCorsi(request.GET)
     cerca = request.GET.get("q")
 
-
-    autorizzazioni= Approvazione.objects.filter(convalida = True)
-    for autorizzazioni in autorizzazioni:
-        print(autorizzazioni)
 
 
     if corsi == 'f1':
@@ -341,7 +336,7 @@ def filtro_fasce(request):
     #         corsi = Corso.objects.filter(Q(titolo__icontains=cerca)|
     #         Q(descrizione__icontains=cerca))
 
-    return render(request, 'corsi/filtro_fasce.html', {'corsi' : corsi, 'fascia': fascia, 'form':form, 'autorizzazioni':autorizzazioni})
+    return render(request, 'corsi/filtro_fasce.html', {'corsi' : corsi, 'fascia': fascia, 'form':form})
 
 @login_required(login_url='/login/')
 def elimina(request, corso_id):

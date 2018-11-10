@@ -35,21 +35,28 @@
         <div class="card border-secondary mb-3">
 
           <div class="card-header">
-            <h4 class="card-title">{{ corso.titolo }}</h4>
+            <i><h4 class="card-title">{{ corso.titolo }}</h4></i>
           </div>
           <div class="card-body">
 
-            <h10>{{ corso.studenti_referenti }}</h10>
-    <p id='descrizione'></p>
+            <h10>{{ corso.studente_referente1 }},
+               {{ corso.studente_referente2 }} ,
+               {{ corso.studente_referente3 }},
+             {{ corso.studente_referente4 }},
+           {{ corso.studente_referente5 }}</h10>
 
-<script>
-var anteprima = ("{{ corso.descrizione }}") ;
-var anteprima_corta = (anteprima.substring(0,70)+"...");
-document.getElementById('descrizione').innerHTML = anteprima_corta;
-document.write(anteprima_corta);
-</script>
 
-            <p>Esperti esterni: {{corso.esperti_esterni}}</p>
+            <p><b>Descrizione:</b><h12 id='descrizione{{corso.id}}'></h12></p>
+
+        <script>
+        var anteprima = ("{{ corso.descrizione }}") ;
+        var anteprima_corta = (anteprima.substring(0,150)+"...");
+        document.getElementById('descrizione'+'{{corso.id}}').innerHTML = anteprima_corta;
+        </script>
+
+
+
+
                 {%if corso.progressivo == True%} <p>progressivo</p>
 
                 <table class="table table-striped">
@@ -101,6 +108,9 @@ document.write(anteprima_corta);
 
           {%endif%}
           {%endif%}
+
+
+
           <form method="POST" class="post-form" action="{%url 'edit_iscrizioni' corso.id  %}?f={{fascia}}">
             {% csrf_token %}
 

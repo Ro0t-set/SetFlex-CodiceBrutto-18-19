@@ -11,7 +11,7 @@ class IscrizioneAdmin(admin.ModelAdmin):
 
 class CorsiAdmin(admin.ModelAdmin):
     list_display = ( 'titolo','esperti_esterni','f1','f2','f3','f4','f5','f6','f7','f8', 'f9')
-    search_fields = ['titolo', 'studenti_referenti', 'esperti_esterni']
+    search_fields = ['titolo', 'studente_referente1', 'studente_referente2', 'studente_referente3', 'studente_referente4', 'studente_referente5', 'esperti_esterni']
 
 admin.site.register(Corso, CorsiAdmin)
 admin.site.register(Aula)
