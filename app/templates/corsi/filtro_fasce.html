@@ -32,7 +32,7 @@
 
   <div id=box>
     {% csrf_token %}
-        <div class="card">
+        <div class="card border-secondary mb-3">
 
           <div class="card-header">
             <h4 class="card-title">{{ corso.titolo }}</h4>
@@ -40,6 +40,15 @@
           <div class="card-body">
 
             <h10>{{ corso.studenti_referenti }}</h10>
+    <p id='descrizione'></p>
+
+<script>
+var anteprima = ("{{ corso.descrizione }}") ;
+var anteprima_corta = (anteprima.substring(0,70)+"...");
+document.getElementById('descrizione').innerHTML = anteprima_corta;
+document.write(anteprima_corta);
+</script>
+
             <p>Esperti esterni: {{corso.esperti_esterni}}</p>
                 {%if corso.progressivo == True%} <p>progressivo</p>
 
@@ -89,13 +98,15 @@
           {%elif fascia == "f7"%} <h5>Venerdì 3-4</h5>
           {%elif fascia == "f8"%} <h5>Venerdì 5-6</h5>
           {%elif fascia == "f9"%} <h5>Venerdì 1-2</h5>
+
           {%endif%}
           {%endif%}
           <form method="POST" class="post-form" action="{%url 'edit_iscrizioni' corso.id  %}?f={{fascia}}">
             {% csrf_token %}
 
-            <center><a href="{%url 'edit_iscrizioni' corso.id  %}?f={{fascia}}" class="btn btn-primary">Info e Iscriviti</a></center>
+            <a href="{%url 'edit_iscrizioni' corso.id  %}?f={{fascia}}" class="btn btn-primary">Info e Iscriviti</a>
             <br>
+
           </form>
           </div>
 
