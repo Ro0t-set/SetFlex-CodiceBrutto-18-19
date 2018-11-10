@@ -1,6 +1,6 @@
 /* css reset: remove white spaces */
 * {
-  
+
   margin: 0;
   padding: 0;
   border: 0;
@@ -9,7 +9,13 @@
   vertical-align: baseline;
   background: transparent;
 }
-
+table > tbody > tr > td:last-child {
+  white-space: nowrap;
+}
+table {
+ overflow-x: auto;
+ max-width: 100%;
+}
 table {
 
   table-layout: fixed;

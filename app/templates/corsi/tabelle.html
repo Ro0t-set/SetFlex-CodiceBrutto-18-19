@@ -2,6 +2,10 @@
 
 {% block content %}
 
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css">
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-min.css">
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+
 <form method="GET" action=""> {{ form.q }}<input type="submit" value="Search"> <a href="/tabelle">indietro</a>
   <p>numero corsi tot: {{corsi.count}}</p>
 </form>
@@ -11,8 +15,8 @@
 
     <table class="table table-striped">
       <thead>
+        <!--
         <tr>
-          <th scope="col">#</th>
           <th scope="col">Titolo</th>
           <th scope="col">Autori</th>
           <th scope="col">Sezione Autori</th>
@@ -28,15 +32,41 @@
           <th scope="col">f8({{contatore.7}})</th>
           <th scope="col">f9({{contatore.8}})</th>
         </tr>
+        -->
       </thead>
-    {% for corso in corsi%}
     <tbody>
+    {% for corso in corsi%}
     <tr>
-      <th scope="row"></th>
-      <td><a href="/{{corso.id}}/appello">{{ corso.titolo }}<a></td><td>{{ corso.studenti_referenti }}</td><td>{{ corso.classi_autori }}</td><td>
-
-       </td><td>{{ corso.aule }}</td><td>{{ corso.progressivo }}</td><td>{{ corso.f1 }}</td><td>{{ corso.f2 }}</td><td>{{ corso.f3}}</td><td>{{ corso.f4 }}</td><td>{{ corso.f5 }}</td><td>{{ corso.f6 }}</td><td>{{ corso.f7 }}</td><td>{{ corso.f8 }}<td>{{ corso.f9 }}</td></td>
-
+      <table class="table table-striped">
+        <div class="pure-u-1-1 pure-u-md-1-1 pure-u-sm-1-1 pure-u-lg-1-3 pure-u-xl-1-6">Titolo: <a href="/{{corso.id}}/appello">{{ corso.titolo }}<a></div>
+        <div class="pure-u-1-1 pure-u-md-1-3 pure-u-sm-1-1 pure-u-lg-1-3 pure-u-xl-1-8">stud1:</div>
+        <div class="pure-u-1-1 pure-u-md-1-3 pure-u-sm-1-1 pure-u-lg-1-3 pure-u-xl-1-8">stud2:</div>
+        <div class="pure-u-1-1 pure-u-md-1-3 pure-u-sm-1-1 pure-u-lg-1-3 pure-u-xl-1-8">stud3:</div>
+        <div class="pure-u-1-1 pure-u-md-1-3 pure-u-sm-1-1 pure-u-lg-1-3 pure-u-xl-1-8">stud4:</div>
+        <div class="pure-u-1-1 pure-u-md-1-3 pure-u-sm-1-1 pure-u-lg-1-3 pure-u-xl-1-8">stud5:</div>
+        <div class="pure-u-1-1 pure-u-md-1-3 pure-u-sm-1-1 pure-u-lg-1-3 pure-u-xl-1-8">Aula: {{corso.aule}}</div>
+        <div class="pure-u-1-1 pure-u-md-1-3 pure-u-sm-1-1 pure-u-lg-1-3 pure-u-xl-1-24">Progressivo: {{corso.progressivo}}</div>
+        <br>
+        <div class="pure-u-1-1 pure-u-md-1-1 pure-u-sm-1-1 pure-u-lg-1-1 pure-u-xl-1-1">
+          <table class="table table-striped">
+            <tr><td>📗</td><td>📘</td><td>📕</td><td>f7: {% if corso.f7 %} ✅ {%else%} ❌ {% endif %}</td></tr>
+            <tr><td>f1: {% if corso.f1 %} ✅ {%else%} ❌ {% endif %}</td><td>f3: {% if corso.f3 %} ✅ {%else%} ❌ {% endif %}</td><td>f5: {% if corso.f5 %} ✅ {%else%} ❌ {% endif %}</td><td>f8: {% if corso.f8 %} ✅ {%else%} ❌ {% endif %}</td></tr>
+            <tr><td>f2: {% if corso.fq %} ✅ {%else%} ❌ {% endif %}</td><td>f4: {% if corso.f4 %} ✅ {%else%} ❌ {% endif %}</td><td>f6: {% if corso.f6 %} ✅ {%else%} ❌ {% endif %}</td><td>f9: {% if corso.f9 %} ✅ {%else%} ❌ {% endif %}</td></tr>
+          </table>
+          <!--
+        </div>
+        <div class="pure-u-1-1 pure-u-md-1-4 pure-u-sm-1-1 pure-u-lg-1-4 pure-u-xl-1-12">f1: {% if corso.f1 %} ✅ {%else%} ❌ {% endif %}</div>
+        <div class="pure-u-1-1 pure-u-md-1-4 pure-u-sm-1-1 pure-u-lg-1-4 pure-u-xl-1-12">f2: {% if corso.f2 %} ✅ {%else%} ❌ {% endif %}</div>
+        <div class="pure-u-1-1 pure-u-md-1-4 pure-u-sm-1-1 pure-u-lg-1-4 pure-u-xl-1-12">f3: {% if corso.f3 %} ✅ {%else%} ❌ {% endif %}</div>
+        <div class="pure-u-1-1 pure-u-md-1-4 pure-u-sm-1-1 pure-u-lg-1-4 pure-u-xl-1-12">f4: {% if corso.f4 %} ✅ {%else%} ❌ {% endif %}</div>
+        <div class="pure-u-1-1 pure-u-md-1-4 pure-u-sm-1-1 pure-u-lg-1-4 pure-u-xl-1-12">f5: {% if corso.f5 %} ✅ {%else%} ❌ {% endif %}</div>
+        <div class="pure-u-1-1 pure-u-md-1-4 pure-u-sm-1-1 pure-u-lg-1-4 pure-u-xl-1-12">f6: {% if corso.f6 %} ✅ {%else%} ❌ {% endif %}</div>
+        <div class="pure-u-1-1 pure-u-md-1-4 pure-u-sm-1-1 pure-u-lg-1-4 pure-u-xl-1-12">f7:{% if corso.f7 %} ✅ {%else%} ❌ {% endif %}</div>
+        <div class="pure-u-1-1 pure-u-md-1-4 pure-u-sm-1-1 pure-u-lg-1-4 pure-u-xl-1-12">f8: {% if corso.f8 %} ✅ {%else%} ❌ {% endif %}</div>
+        <div class="pure-u-1-1 pure-u-md-1-4 pure-u-sm-1-1 pure-u-lg-1-4 pure-u-xl-1-12">f9: {% if corso.f9 %} ✅ {%else%} ❌ {% endif %}</div>
+        -->
+      </table>
+      <div class="line"></div>
     {% endfor %}
   </tr>
 </tbody>
