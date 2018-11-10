@@ -485,3 +485,8 @@ def crea(request):
 
 
     return render(request, 'corsi/crea.html', {'form' : form , 'convalida':convalida})
+
+@login_required(login_url='/login/')
+def iscrizione_da_lista_completa(request):
+    corsi= Corso.objects.all()
+    return render(request, 'corsi/iscrizione_da_lista_completa.html', {'corsi' : corsi})

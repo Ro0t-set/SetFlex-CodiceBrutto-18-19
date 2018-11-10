@@ -16,7 +16,6 @@
           <th scope="col">Titolo</th>
           <th scope="col">Autori</th>
           <th scope="col">Sezione Autori</th>
-<th scope="col">descrizione</th>
           <th scope="col">Classe Richiesta</th>
           <th scope="col">Progressivo?</th>
           <th scope="col">f1({{contatore.0}})</th>
@@ -36,7 +35,7 @@
       <th scope="row"></th>
       <td><a href="/{{corso.id}}/appello">{{ corso.titolo }}<a></td><td>{{ corso.studenti_referenti }}</td><td>{{ corso.classi_autori }}</td><td>
 
-<!--       {{ corso.descrizione }}</td><td>{{ corso.aule }}</td><td>{{ corso.progressivo }}</td><td>{{ corso.f1 }}</td><td>{{ corso.f2 }}</td><td>{{ corso.f3}}</td><td>{{ corso.f4 }}</td><td>{{ corso.f5 }}</td><td>{{ corso.f6 }}</td><td>{{ corso.f7 }}</td><td>{{ corso.f8 }}<td>{{ corso.f9 }}</td></td> -->
+       </td><td>{{ corso.aule }}</td><td>{{ corso.progressivo }}</td><td>{{ corso.f1 }}</td><td>{{ corso.f2 }}</td><td>{{ corso.f3}}</td><td>{{ corso.f4 }}</td><td>{{ corso.f5 }}</td><td>{{ corso.f6 }}</td><td>{{ corso.f7 }}</td><td>{{ corso.f8 }}<td>{{ corso.f9 }}</td></td>
 
     {% endfor %}
   </tr>
@@ -45,9 +44,6 @@
 <br>
 <br>
 
-{%for iscrizione in appelli%}
 
-
-{%endfor%}
 
 {% endblock content %}
