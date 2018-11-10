@@ -38,7 +38,7 @@
     {% for corso in corsi%}
     <tr>
       <table class="table table-striped">
-        <div class="pure-u-1-1 pure-u-md-1-1 pure-u-sm-1-1 pure-u-lg-1-3 pure-u-xl-1-6">Titolo: <a href="/{{corso.id}}/appello">{{ corso.titolo }}<a></div>
+        <div class="pure-u-1-1 pure-u-md-1-1 pure-u-sm-1-1 pure-u-lg-1-3 pure-u-xl-1-6">Titolo: <b><font color="blue"><a href="/{{corso.id}}/appello">{{ corso.titolo }}<a></font><bd></div>
         <div class="pure-u-1-1 pure-u-md-1-3 pure-u-sm-1-1 pure-u-lg-1-3 pure-u-xl-1-8">stud1:</div>
         <div class="pure-u-1-1 pure-u-md-1-3 pure-u-sm-1-1 pure-u-lg-1-3 pure-u-xl-1-8">stud2:</div>
         <div class="pure-u-1-1 pure-u-md-1-3 pure-u-sm-1-1 pure-u-lg-1-3 pure-u-xl-1-8">stud3:</div>
@@ -49,9 +49,9 @@
         <br>
         <div class="pure-u-1-1 pure-u-md-1-1 pure-u-sm-1-1 pure-u-lg-1-1 pure-u-xl-1-1">
           <table class="table table-striped">
-            <tr><td>📗</td><td>📘</td><td>📕</td><td>f7: {% if corso.f7 %} ✅ {%else%} ❌ {% endif %}</td></tr>
-            <tr><td>f1: {% if corso.f1 %} ✅ {%else%} ❌ {% endif %}</td><td>f3: {% if corso.f3 %} ✅ {%else%} ❌ {% endif %}</td><td>f5: {% if corso.f5 %} ✅ {%else%} ❌ {% endif %}</td><td>f8: {% if corso.f8 %} ✅ {%else%} ❌ {% endif %}</td></tr>
-            <tr><td>f2: {% if corso.fq %} ✅ {%else%} ❌ {% endif %}</td><td>f4: {% if corso.f4 %} ✅ {%else%} ❌ {% endif %}</td><td>f6: {% if corso.f6 %} ✅ {%else%} ❌ {% endif %}</td><td>f9: {% if corso.f9 %} ✅ {%else%} ❌ {% endif %}</td></tr>
+            <tr><td><center>📗</center></td><td><center>📘</center></td><td><center>📕</center></td><td><center>f7: {% if corso.f7 %} ✅ {%else%} ❌ {% endif %}<center></td></tr>
+            <tr><td><center>f1: {% if corso.f1 %} ✅ {%else%} ❌ {% endif %}</center></td><td><center>f3: {% if corso.f3 %} ✅ {%else%} ❌ {% endif %}</center></td><td><center>f5: {% if corso.f5 %} ✅ {%else%} ❌ {% endif %}</center></td><td><center>f8: {% if corso.f8 %} ✅ {%else%} ❌ {% endif %}<center></td></tr>
+            <tr><td><center>f2: {% if corso.fq %} ✅ {%else%} ❌ {% endif %}</center></td><td><center>f4: {% if corso.f4 %} ✅ {%else%} ❌ {% endif %}</center></td><td><center>f6: {% if corso.f6 %} ✅ {%else%} ❌ {% endif %}</center></td><td><center>f9: {% if corso.f9 %} ✅ {%else%} ❌ {% endif %}<center></td></tr>
           </table>
           <!--
         </div>
