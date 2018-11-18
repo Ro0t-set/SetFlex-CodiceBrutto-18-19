@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Corso, Iscrizione, Approvazione, Comunicazione
+from .models import Corso, Iscrizione, Approvazione, Comunicazione, Permessi
 from django.shortcuts import get_object_or_404, render
 from .forms import CreaCorsi, IscrizioneForm, Mail, CercaCorsi, ConvalidaCorsi
 from django.shortcuts import redirect
@@ -104,11 +104,13 @@ def tabelle (request):
          corsi = Corso.objects.filter(Q(titolo__icontains=cerca)|
          #Q(studenti_referenti__icontains=cerca)|
          Q(aule__aule__exact=cerca))
+     permessi = Permessi.objects.get(nome="main").tabelle
+     if (permessi and request.user.is_staff) or (permessi == False):
+         permessi = True
+     else:
+         permessi = False
 
-
-
-
-     return render(request, 'corsi/tabelle.html', {'corsi': corsi,  'form':form , 'contatore':contatore})
+     return render(request, 'corsi/tabelle.html', {'corsi': corsi,  'form':form , 'contatore':contatore, 'permessi': permessi})
 
 
 
@@ -135,9 +137,12 @@ def appelli(request, corso_id):
     list(Iscrizione.objects.filter(corso9_id=fasca).values_list('user__username', flat=True)),
     ]
 
-
-
-    return render(request, 'corsi/appello.html', {'appello':appello})
+    permessi = Permessi.objects.get(nome="main").appello
+    if (permessi and request.user.is_staff) or (permessi == False):
+        permessi = True
+    else:
+        permessi = False
+    return render(request, 'corsi/appello.html', {'appello':appello, 'permessi': permessi})
 
 
 @login_required(login_url='/login/')
@@ -288,8 +293,13 @@ def edit_iscrizioni(request, corso_id):
         else:
             form = IscrizioneForm(instance= iscrizione)
 
+        permessi = Permessi.objects.get(nome="main").edit_iscrizione
+        if (permessi and request.user.is_staff) or (permessi == False):
+            permessi = True
+        else:
+            permessi = False
 
-        return render(request, 'corsi/edit.html', {'form':form, 'corsi':corsi, 'contatore':contatore, 'tabellagrafica':tabellagrafica, 'iscrizione':iscrizione})
+        return render(request, 'corsi/edit.html', {'form':form, 'corsi':corsi, 'contatore':contatore, 'tabellagrafica':tabellagrafica, 'iscrizione':iscrizione, 'permessi': permessi})
 
 
 
@@ -336,7 +346,13 @@ def filtro_fasce(request):
     #         corsi = Corso.objects.filter(Q(titolo__icontains=cerca)|
     #         Q(descrizione__icontains=cerca))
 
-    return render(request, 'corsi/filtro_fasce.html', {'corsi' : corsi, 'fascia': fascia, 'form':form})
+    permessi = Permessi.objects.get(nome="main").filtro_fasce
+    if (permessi and request.user.is_staff) or (permessi == False):
+        permessi = True
+    else:
+        permessi = False
+
+    return render(request, 'corsi/filtro_fasce.html', {'corsi' : corsi, 'fascia': fascia, 'form':form, 'permessi': permessi})
 
 @login_required(login_url='/login/')
 def elimina(request, corso_id):
@@ -406,7 +422,13 @@ def elimina(request, corso_id):
     else:
         form = IscrizioneForm(instance= iscrizione)
 
-    return render(request, 'corsi/elimina.html', {'form':form, 'corsi':corsi})
+    permessi = Permessi.objects.get(nome="main").elimina_corso
+    if (permessi and request.user.is_staff) or (permessi == False):
+        permessi = True
+    else:
+        permessi = False
+
+    return render(request, 'corsi/elimina.html', {'form':form, 'corsi':corsi, 'permessi': permessi})
 
 
 def help(request):
@@ -482,9 +504,13 @@ def crea(request):
     else:
         form = CreaCorsi()
 
+    permessi = Permessi.objects.get(nome="main").crea_corso
+    if (permessi and request.user.is_staff) or (permessi == False):
+        permessi = True
+    else:
+        permessi = False
 
-
-    return render(request, 'corsi/crea.html', {'form' : form , 'convalida':convalida})
+    return render(request, 'corsi/crea.html', {'form' : form , 'convalida':convalida, 'permessi': permessi})
 
 @login_required(login_url='/login/')
 def iscrizione_da_lista_completa(request):
