@@ -1,6 +1,8 @@
 {% extends 'corsi/base.html' %}
 
 {% block content %}
+
+{% if permessi %}
 <h1>Crea Corsi</h1>
   <form method="POST" >
     <div class="form-row">
@@ -84,4 +86,7 @@
 
     </div>
   </form>
+{% else %}
+  <p>Non sei autorizzato a vedere questa pagina.</p>
+{% endif %}
 {% endblock %}

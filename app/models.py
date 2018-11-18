@@ -7,6 +7,22 @@ from django.core.mail import EmailMessage
 
 # Create your models here.
 
+class Permessi(models.Model):
+
+    nome = models.CharField(max_length=100)
+
+    appello = models.BooleanField(default=False)
+    crea_corso = models.BooleanField(default=False)
+    elimina_corso = models.BooleanField(default=False)
+    tabelle = models.BooleanField(default=False)
+    edit_iscrizione = models.BooleanField(default=False)
+    filtro_fasce = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.nome
+
+
+
 class Comunicazione(models.Model):
     titolo= models.CharField(max_length=100, default="")
     comunicazione= models.TextField(max_length=1000)

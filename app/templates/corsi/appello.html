@@ -2,7 +2,7 @@
 
 {% block content %}
 
-
+{% if permessi %}
 
     <b>Martedì 4-5</b>
 {{ appello.0}}
@@ -32,6 +32,9 @@
 {{ appello.7}}
           <br>
 
+{% else %}
+  non sei autorizzato a visualizzare questa pagina 
+{% endif %}
 
 
 

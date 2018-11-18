@@ -2,6 +2,7 @@
 
 {% block content %}
 
+{% if permessi %}
 
   <h3>Per effettuare la ricerca di un corso pigiare la combinazione di tasti [ctrl+f], se hai un pc apple usa [cmd+f]</h3>
   <script>
@@ -123,5 +124,13 @@
         <br>
     </div>
 
+
+
   {% endfor %}
+
+  {% else %}
+
+  non sei autorizzato a visualizzare questa pagina
+
+  {% endif %}
 {% endblock content %}

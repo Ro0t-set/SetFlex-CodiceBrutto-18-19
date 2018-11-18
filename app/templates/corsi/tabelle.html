@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{% if permessi %}
+
 <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css">
 <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-min.css">
 <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
@@ -41,6 +43,8 @@
 <br>
 <br>
 
-
+{% else %}
+  non sei autorizzato a visualizzare questa pagina
+{% endif %}
 
 {% endblock content %}
