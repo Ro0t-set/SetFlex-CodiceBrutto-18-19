@@ -79,6 +79,8 @@ class Corso(models.Model):
     f9= models.BooleanField(default=False)
 
     convalida= models.BooleanField(default=False)
+    
+    corso_pieno= models.BooleanField(default=False)
 
 
 
