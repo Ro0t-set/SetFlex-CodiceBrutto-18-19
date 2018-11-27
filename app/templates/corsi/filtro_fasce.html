@@ -73,39 +73,36 @@
 
                   <tr>
                     <th scope="row">1.</th>
-                    <td><img src="/static/libro.png" class="icone"> </td>
-                    <td><img src="/static/libro.png" class="icone"> </td>
-                    <td><img src="/static/libro.png" class="icone"> </td>
-                    <td>{%if corso.f9 == False%}<img class="icone" src="/static/x.svg" alt="-">{%elif tabellagrafica.8 == True and iscrizione.corso9_id != Null%}<img class="icone" src="/static/pallino_rosso.svg">{%else%}<img class="icone" src="/static/pallino_verde.svg">{%endif%}
-                  </tr>
-                  <tr>
-                    <th scope="row">2.</th>
                     <td>{%if corso.f1 == False%}<img class="icone" src="/static/x.svg" alt="-">{%elif tabellagrafica.0 == True and iscrizione.corso1_id != Null%}<img class="icone" src="/static/pallino_rosso.svg">{%else%}<img class="icone" src="/static/pallino_verde.svg">{%endif%}</td>
-                    <td>{%if corso.f3 == False%}<img class="icone" src="/static/x.svg" alt="-">{%elif tabellagrafica.2 == True and iscrizione.corso3_id != Null%}<img class="icone" src="/static/pallino_rosso.svg">{%else%}<img class="icone" src="/static/pallino_verde.svg">{%endif%}</td>
-                    <td>{%if corso.f5 == False%}<img class="icone" src="/static/x.svg" alt="-">{%elif tabellagrafica.4 == True and iscrizione.corso5_id != Null%}<img class="icone" src="/static/pallino_rosso.svg">{%else%}<img class="icone" src="/static/pallino_verde.svg">{%endif%}</td>
+                    <td>{%if corso.f4 == False%}<img class="icone" src="/static/x.svg" alt="-">{%elif tabellagrafica.3 == True and iscrizione.corso4_id != Null%}<img class="icone" src="/static/pallino_rosso.svg">{%else%}<img class="icone" src="/static/pallino_verde.svg">{%endif%}</td>
                     <td>{%if corso.f7 == False%}<img class="icone" src="/static/x.svg" alt="-">{%elif tabellagrafica.6 == True and iscrizione.corso7_id != Null%}<img class="icone" src="/static/pallino_rosso.svg">{%else%}<img class="icone" src="/static/pallino_verde.svg">{%endif%}</td>
                   </tr>
                   <tr>
-                    <th scope="row">3.</th>
+                    <th scope="row">2.</th>
                     <td>{%if corso.f2 == False%}<img class="icone" src="/static/x.svg" alt="-">{%elif tabellagrafica.1 == True and iscrizione.corso2_id != Null%}<img class="icone" src="/static/pallino_rosso.svg">{%else%}<img class="icone" src="/static/pallino_verde.svg">{%endif%}</td>
-                    <td>{%if corso.f4 == False%}<img class="icone" src="/static/x.svg" alt="-">{%elif tabellagrafica.3 == True and iscrizione.corso4_id != Null%}<img class="icone" src="/static/pallino_rosso.svg">{%else%}<img class="icone" src="/static/pallino_verde.svg">{%endif%}</td>
-                    <td>{%if corso.f6 == False%}<img class="icone" src="/static/x.svg" alt="-">{%elif tabellagrafica.5 == True and iscrizione.corso6_id != Null%}<img class="icone" src="/static/pallino_rosso.svg">{%else%}<img class="icone" src="/static/pallino_verde.svg">{%endif%}</td>
+                    <td>{%if corso.f5 == False%}<img class="icone" src="/static/x.svg" alt="-">{%elif tabellagrafica.4 == True and iscrizione.corso5_id != Null%}<img class="icone" src="/static/pallino_rosso.svg">{%else%}<img class="icone" src="/static/pallino_verde.svg">{%endif%}</td>
                     <td>{%if corso.f8 == False%}<img class="icone" src="/static/x.svg" alt="-">{%elif tabellagrafica.7 == True and iscrizione.corso8_id != Null%}<img class="icone" src="/static/pallino_rosso.svg">{%else%}<img class="icone" src="/static/pallino_verde.svg">{%endif%}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3.</th>
+                    <td>{%if corso.f3 == False%}<img class="icone" src="/static/x.svg" alt="-">{%elif tabellagrafica.2 == True and iscrizione.corso3_id != Null%}<img class="icone" src="/static/pallino_rosso.svg">{%else%}<img class="icone" src="/static/pallino_verde.svg">{%endif%}</td>
+                    <td>{%if corso.f6 == False%}<img class="icone" src="/static/x.svg" alt="-">{%elif tabellagrafica.5 == True and iscrizione.corso6_id != Null%}<img class="icone" src="/static/pallino_rosso.svg">{%else%}<img class="icone" src="/static/pallino_verde.svg">{%endif%}</td>
+                    <td>{%if corso.f9 == False%}<img class="icone" src="/static/x.svg" alt="-">{%elif tabellagrafica.8 == True and iscrizione.corso9_id != Null%}<img class="icone" src="/static/pallino_rosso.svg">{%else%}<img class="icone" src="/static/pallino_verde.svg">{%endif%}
                   </tr>
 
                 </table>
 
           </div>
           {%elif corso.progressivo == False%}<p>singolo</p>
-          {%if fascia == "f1"%} <h5>Martedì 3-4 ora</h5>
-          {%elif fascia == "f2"%} <h5>Martedì 5-6</h5>
-          {%elif fascia == "f3"%} <h5>Mercoledì 3-4</h5>
-          {%elif fascia == "f4"%} <h5>Mercoledì 5-6</h5>
+          {%if fascia == "f1"%} <h5>Mercoledì 1-2 ora</h5>
+          {%elif fascia == "f2"%} <h5>Mercoledì 3-4</h5>
+          {%elif fascia == "f3"%} <h5>Mercoledì 5-6</h5>
+          {%elif fascia == "f4"%} <h5>Giovedì 1-2</h5>
           {%elif fascia == "f5"%} <h5>Giovedì 3-4</h5>
           {%elif fascia == "f6"%} <h5>Giovedì 5-6</h5>
-          {%elif fascia == "f7"%} <h5>Venerdì 3-4</h5>
-          {%elif fascia == "f8"%} <h5>Venerdì 5-6</h5>
-          {%elif fascia == "f9"%} <h5>Venerdì 1-2</h5>
+          {%elif fascia == "f7"%} <h5>Venerdì 1-2</h5>
+          {%elif fascia == "f8"%} <h5>Venerdì 3-4</h5>
+          {%elif fascia == "f9"%} <h5>Venerdì 5-6</h5>
 
           {%endif%}
           {%endif%}
