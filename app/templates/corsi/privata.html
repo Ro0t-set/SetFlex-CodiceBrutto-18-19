@@ -31,8 +31,7 @@
 
   <tr> <th scope="row">2.</th>
     <td>{% if iscrizione.corso2 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f2"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}{{iscrizione.corso2}} <a href="{% url 'elimina' iscrizione.corso2.id  %}?f=f2"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </td>
-
-  <td>{% if iscrizione.corso5 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f5"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}{{iscrizione.corso5}} <a href="{% url 'elimina' iscrizione.corso5.id  %}?f=f5"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </td>
+      <td>{% if iscrizione.corso5 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f5"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}{{iscrizione.corso5}} <a href="{% url 'elimina' iscrizione.corso5.id  %}?f=f5"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </td>
     <td>{% if iscrizione.corso8 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f8"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}{{iscrizione.corso8}} <a href="{% url 'elimina' iscrizione.corso8.id  %}?f=f8"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </td>
 
   </tr>

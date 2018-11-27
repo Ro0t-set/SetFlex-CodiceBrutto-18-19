@@ -15,16 +15,16 @@
   </script>
 
   <p>numero corsi tot: {{corsi.count}}</p>
-  {%if fascia == "f1"%} <h3>Martedì 3-4 ora</h3>
-  {%elif fascia == "f2"%} <h3>Martedì 5-6</h3>
-  {%elif fascia == "f3"%} <h3>Mercoledì 3-4</h3>
-  {%elif fascia == "f4"%} <h3>Mercoledì 5-6</h3>
-  {%elif fascia == "f5"%} <h3>Giovedì 3-4</h3>
-  {%elif fascia == "f6"%} <h3>Giovedì 5-6</h3>
-  {%elif fascia == "f7"%} <h3>Venerdì 3-4</h3>
-  {%elif fascia == "f8"%} <h3>Venerdì 5-6</h3>
-  {%elif fascia == "f9"%} <h3>Venerdì 1-2</h3>
-  {%endif%}
+  {%if fascia == "f1"%} <h5>Mercoledì 1-2 ora</h5>
+  {%elif fascia == "f2"%} <h5>Mercoledì 3-4</h5>
+  {%elif fascia == "f3"%} <h5>Mercoledì 5-6</h5>
+  {%elif fascia == "f4"%} <h5>Giovedì 1-2</h5>
+  {%elif fascia == "f5"%} <h5>Giovedì 3-4</h5>
+  {%elif fascia == "f6"%} <h5>Giovedì 5-6</h5>
+  {%elif fascia == "f7"%} <h5>Venerdì 1-2</h5>
+  {%elif fascia == "f8"%} <h5>Venerdì 3-4</h5>
+  {%elif fascia == "f9"%} <h5>Venerdì 5-6</h5>
+  {% endif %}
 
 <p style="color:red;">{{ ripetiziones }} </p>
 

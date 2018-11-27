@@ -31,9 +31,24 @@
         <br>
         <div class="pure-u-1-1 pure-u-md-1-1 pure-u-sm-1-1 pure-u-lg-1-1 pure-u-xl-1-1">
           <table class="table table-striped">
-            <tr><td><center>📗</center></td><td><center>📘</center></td><td><center>📕</center></td><td><center>f7: {% if corso.f7 %} ✅ {%else%} ❌ {% endif %}<center></td></tr>
-            <tr><td><center>f1: {% if corso.f1 %} ✅ {%else%} ❌ {% endif %}</center></td><td><center>f3: {% if corso.f3 %} ✅ {%else%} ❌ {% endif %}</center></td><td><center>f5: {% if corso.f5 %} ✅ {%else%} ❌ {% endif %}</center></td><td><center>f8: {% if corso.f8 %} ✅ {%else%} ❌ {% endif %}<center></td></tr>
-            <tr><td><center>f2: {% if corso.fq %} ✅ {%else%} ❌ {% endif %}</center></td><td><center>f4: {% if corso.f4 %} ✅ {%else%} ❌ {% endif %}</center></td><td><center>f6: {% if corso.f6 %} ✅ {%else%} ❌ {% endif %}</center></td><td><center>f9: {% if corso.f9 %} ✅ {%else%} ❌ {% endif %}<center></td></tr>
+            <tr>
+              <td><center>f1: {% if corso.f1 %} ✅ {% else %} ❌ {% endif %}</center></td>
+              <td><center>f4: {% if corso.f4 %} ✅ {% else %} ❌ {% endif %}</center></td>
+              <td><center>f7: {% if corso.f7 %} ✅ {% else %} ❌ {% endif %}</center></td>
+            </tr>
+            <tr>
+              <td><center>f2: {% if corso.f2 %} ✅ {% else %} ❌ {% endif %}</center></td>
+              <td><center>f5: {% if corso.f5 %} ✅ {% else %} ❌ {% endif %}</center></td>
+              <td><center>f8: {% if corso.f8 %} ✅ {% else %} ❌ {% endif %}</center></td>
+            </tr>
+            <tr>
+              <td><center>f3: {% if corso.f3 %} ✅ {% else %} ❌ {% endif %}</center></td>
+              <td><center>f6: {% if corso.f6 %} ✅ {% else %} ❌ {% endif %}</center></td>
+              <td><center>f9: {% if corso.f9 %} ✅ {% else %} ❌ {% endif %}</center></td>
+            </tr>
+
+
+
           </table>
       </table>
       <div class="line"></div>
