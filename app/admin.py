@@ -11,11 +11,12 @@ class IscrizioneAdmin(admin.ModelAdmin):
 
 class CorsiAdmin(admin.ModelAdmin):
     list_display = ( 'titolo','esperti_esterni','f1','f2','f3','f4','f5','f6','f7','f8', 'f9')
-    search_fields = ['titolo', 'studente_referente1', 'studente_referente2', 'studente_referente3', 'studente_referente4', 'studente_referente5', 'esperti_esterni']
+    search_fields = ['titolo', 'studente_referente1__username', 'studente_referente2__username', 'studente_referente3__username', 'studente_referente4__username', 'studente_referente5__username', 'esperti_esterni']
 
 
 class ApprovazioneAdmin(admin.ModelAdmin):
     list_display = ( 'corso','alunno','convalida')
+    search_fields = ['corso__titolo','alunno__username']
 
 
 admin.site.register(Corso, CorsiAdmin)

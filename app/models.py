@@ -61,7 +61,7 @@ class Corso(models.Model):
     studente_referente4 = models.ForeignKey('auth.User', related_name='studente_referente4', blank=True, null=True)
     studente_referente5 = models.ForeignKey('auth.User', related_name='studente_referente5', blank=True, null=True)
     descrizione= models.TextField(blank=True)
-    classi_autori = models.CharField(max_length=40, default="", blank=True, null=True)
+    numero_di_telefono = models.IntegerField()
     esperti_esterni = models.CharField(max_length=100,blank=True, null=True, default="")
     aule = models.ForeignKey('Aula')
 
@@ -79,7 +79,7 @@ class Corso(models.Model):
     f9= models.BooleanField(default=False)
 
     convalida= models.BooleanField(default=False)
-    
+
     corso_pieno= models.BooleanField(default=False)
 
 

@@ -18,13 +18,14 @@ class CreaCorsi(forms.ModelForm, forms.Form):
     referente5 = forms.CharField(required = False,label='referente5', max_length="100", widget=forms.TextInput(attrs={'class': 'form-control form-control-lg'}))
     class Meta:
         model = Corso
-        fields = ['titolo','esperti_esterni','classi_autori', 'descrizione','aule', 'progressivo','f1','f2','f3','f4','f5','f6','f7','f8','f9' ]
+        fields = ['titolo','esperti_esterni','numero_di_telefono', 'descrizione','aule', 'progressivo','f1','f2','f3','f4','f5','f6','f7','f8','f9' ]
         widgets = {
             'titolo': forms.TextInput(attrs={'class': 'form-control'}),
             #'studenti_referenti': forms.TextInput(attrs={'class': 'form-control'}),
-            'classi_autori': forms.TextInput(attrs={'class': 'form-control'}),
+            'numero_di_telefono': forms.NumberInput(attrs={'class': 'form-control'}),
             'esperti_esterni': forms.TextInput(attrs={'class': 'form-control'}),
             'descrizione': forms.Textarea(attrs={'class': 'form-control', 'rows':'3'}),
+
 
         }
 

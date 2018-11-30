@@ -491,7 +491,7 @@ def crea(request):
                 msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
                 msg.attach_alternative(html_content, "text/html")
                 corso.save()
-                #msg.send()
+                msg.send()
 
                 for i in range(1,5):
                     i=str(i)
