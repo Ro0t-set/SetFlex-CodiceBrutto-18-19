@@ -14,31 +14,31 @@ def iscrizioniReferenti(corso_id, utente):
     #
     #
     if fasca.f1 and iscrizione.corso1_id != None:
-        return redirect('errorefasciapiena')
+        messages.error(request, 'Fascia gia occupata!')
 
     if fasca.f2 and iscrizione.corso2_id != None:
-        return redirect('errorefasciapiena')
+        messages.error(request, 'Fascia gia occupata!')
 
     if fasca.f3 and iscrizione.corso3_id != None:
-        return redirect('errorefasciapiena')
+        messages.error(request, 'Fascia gia occupata!')
 
     if fasca.f4 and iscrizione.corso4_id != None:
-        return redirect('errorefasciapiena')
+        messages.error(request, 'Fascia gia occupata!')
 
     if fasca.f5 and iscrizione.corso5_id != None:
-        return redirect('errorefasciapiena')
+        messages.error(request, 'Fascia gia occupata!')
 
     if fasca.f6 and iscrizione.corso6_id != None:
-        return redirect('errorefasciapiena')
+        messages.error(request, 'Fascia gia occupata!')
 
     if fasca.f7 and iscrizione.corso7_id != None:
-        return redirect('errorefasciapiena')
+        messages.error(request, 'Fascia gia occupata!')
 
     if fasca.f8 and iscrizione.corso8_id != None:
-        return redirect('errorefasciapiena')
+        messages.error(request, 'Fascia gia occupata!')
 
     if fasca.f9 and iscrizione.corso9_id != None:
-        return redirect('errorefasciapiena')
+        messages.error(request, 'Fascia gia occupata!')
 
 
     print("qui ci arrivo")
@@ -71,6 +71,6 @@ def iscrizioniReferenti(corso_id, utente):
         iscrizione.corso9= fasca
         iscrizione.save()
     else:
-        return redirect('errore')
+        messages.error(request, 'Fascia gia occupata!')
 
     return redirect('privata')

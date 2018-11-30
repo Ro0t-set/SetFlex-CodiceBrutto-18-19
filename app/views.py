@@ -74,11 +74,16 @@ def home (request):
             corso_da_approvare_id = request.GET.get("idcorso")
             corso_da_approvare = Approvazione.objects.get(corso_id=corso_da_approvare_id, alunno=request.user, convalida = False)
             corso_da_approvare.convalida=True
-            corso_da_approvare.save()
-            IscrizioneReferenti.iscrizioniReferenti(corso_da_approvare_id, request.user)
-            convalide=Approvazione.objects.filter(corso_id=corso_da_approvare_id)
-            convalide= convalide.convalida
-            print(convalide)
+            try:
+                IscrizioneReferenti.iscrizioniReferenti(corso_da_approvare_id, request.user)
+                convalide=Approvazione.objects.filter(corso_id=corso_da_approvare_id)
+                #convalide= convalide.convalida
+                corso_da_approvare.save()
+                return redirect('privata')
+            except:
+                messages.error(request, 'Fascia gia occupata!')
+
+
         except:
             pass
     return render(request, 'corsi/home.html', {'convalida':convalida, 'comunicazioni':comunicazioni})
