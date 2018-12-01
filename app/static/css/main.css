@@ -27,6 +27,14 @@ body, html, .wrapper {
   color: black;
 
 }
+div.stripeddivs > div:nth-of-type(even) {
+    background-color: #f2f2f2;
+    padding:5px;
+}
+
+.imieicorsimenu {
+  display:inline-block;
+}
 
 .centered-text {
 
