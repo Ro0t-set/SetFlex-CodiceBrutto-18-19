@@ -61,7 +61,8 @@ def disp_classi_magna(request):
 def disp_classi_palestra(request):
     return render(request, 'corsi/disp_classi_palestra.html')
 
-
+def sviluppatori(request):
+    return render(request, 'corsi/sviluppatori.html')
 
 @login_required(login_url='/login/')
 def home (request):

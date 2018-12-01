@@ -17,6 +17,7 @@ urlpatterns = [
     url(r'^logout/$', logout, name='logout'),
     url(r'^filtro_fasce/$', views.filtro_fasce, name='filtro_fasce'),
     url(r'^errore/$', views.errore, name='errore'),
+    url(r'^sviluppatori/$', views.sviluppatori),
     url(r'^successo/$', views.successo, name='successo'),
     url(r'^errorefasciapiena/$', views.errorefasciapiena, name='errorefasciapiena'),
     url(r'^(?P<corso_id>[0-9]+)/elimina/$', views.elimina, name='elimina'),
