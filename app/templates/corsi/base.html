@@ -113,7 +113,7 @@ window.onload=function(){
                 </div>
             </nav>
 
-            {% if messages %}
+            <!-- {% if messages %}
               <br><br>
               <div class="alert alert-danger coll-7" role="alert">
                 {% for message in messages %}
@@ -123,7 +123,21 @@ window.onload=function(){
                   </h4>
                 </div>
               {%endfor%}
-            {% endif %}
+            {% endif %} -->
+
+
+
+            {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}<div class="alert alert-danger coll-7" role="alert"> {% endif %}
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}<div class="alert alert-success  coll-7" role="alert">  {% endif %}
+        {{ message }}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
 
 
 

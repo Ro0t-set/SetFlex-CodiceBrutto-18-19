@@ -4,13 +4,15 @@
 
 
 <h1 class="titoli" style="font-family: 'Permanent Marker', cursive;">Settimana Flessibile</h1>
+<br><br>
+<h3 style="color: red;">Autorizzazioni:</h3>
+<br>
 {%for convalida in convalida%}
 {%if convalida.convalida == False%}
   <form method="GET" class="post-form">
     {% csrf_token %}
-<h3>Autorizzazioni:</h3>
-{{convalida.corso}}
-{{convalida.corso_id}}
+<h5>Accetti di partecipare al corso: <b>{{convalida.corso}}</b></h5>
+
 
 <a type="submit" id="bottone{{approvazione}}" class="btn btn-primary" href="?idcorso={{convalida.corso_id}}" name="{{convalida.corso_id}}">Accetto</a>
 
@@ -20,7 +22,7 @@
   {%endif%}
 {%endfor%}
 
-<h3>Avvisi:</h3>
+<h3 style="color: red;">Avvisi:</h3>
 
 {%for comunicazioni in comunicazioni%}
 <div class="card">

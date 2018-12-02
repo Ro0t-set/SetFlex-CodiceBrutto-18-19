@@ -75,12 +75,13 @@ def home (request):
             corso_da_approvare_id = request.GET.get("idcorso")
             corso_da_approvare = Approvazione.objects.get(corso_id=corso_da_approvare_id, alunno=request.user, convalida = False)
             corso_da_approvare.convalida=True
+            print(0)
             try:
                 IscrizioneReferenti.iscrizioniReferenti(corso_da_approvare_id, request.user)
                 convalide=Approvazione.objects.filter(corso_id=corso_da_approvare_id)
                 #convalide= convalide.convalida
                 corso_da_approvare.save()
-                return redirect('privata')
+                messages.success(request, 'Operazione eseguita con successo')
             except:
                 messages.error(request, 'Fascia gia occupata!')
 

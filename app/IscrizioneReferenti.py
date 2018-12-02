@@ -1,6 +1,7 @@
 from .models import Corso, Iscrizione, Approvazione
 from django.shortcuts import redirect
 from django.shortcuts import render
+from django.contrib import messages
 def iscrizioniReferenti(corso_id, utente):
 
 
@@ -70,7 +71,3 @@ def iscrizioniReferenti(corso_id, utente):
     if fasca.f9 and iscrizione.corso9_id== None:
         iscrizione.corso9= fasca
         iscrizione.save()
-    else:
-        messages.error(request, 'Fascia gia occupata!')
-
-    return redirect('privata')
