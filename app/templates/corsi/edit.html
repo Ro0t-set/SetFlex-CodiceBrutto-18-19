@@ -52,7 +52,6 @@
     <th scope="col">Martedì</th>
     <th scope="col">Mercoledì</th>
     <th scope="col">Giovedì</th>
-    <th scope="col">Venerdì</th>
   </tr>
 
   </thead>
@@ -79,25 +78,25 @@
 </table>
 
 {%else%}
-{{tabellagrafica}}
+<center><p>fascia:{{tabellagrafica}}</p></center>
 {%endif%}
 
 <br>
-</div>
-</div>
-
 <center>
 <input type="submit" class="btn btn-primary"value="Iscriviti" />
+</center>
 
-
+</div>
+</div>
 
     </form>
 </div>
 </div>
 </div>
 
-</center>
 {% endfor %}
+
+
 <script>
 /*get cookies*/
 function getCookie(name) {var cookieValue = null;if (document.cookie && document.cookie != '') {var cookies = document.cookie.split(';');

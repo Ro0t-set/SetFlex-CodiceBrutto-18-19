@@ -51,7 +51,7 @@
 
         <script>
         var anteprima = ("{{ corso.descrizione }}") ;
-        var anteprima_corta = (anteprima.substring(0,150)+"...");
+        var anteprima_corta = (anteprima.substring(0,1000)+"...");
         document.getElementById('descrizione'+'{{corso.id}}').innerHTML = anteprima_corta;
         </script>
 
@@ -64,7 +64,6 @@
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">M</th>
                       <th scope="col">M</th>
                       <th scope="col">G</th>
                       <th scope="col">V</th>
@@ -112,10 +111,11 @@
           <form method="POST" class="post-form" action="{%url 'edit_iscrizioni' corso.id  %}?f={{fascia}}">
             {% csrf_token %}
 
-            <a href="{%url 'edit_iscrizioni' corso.id  %}?f={{fascia}}" class="btn btn-primary">Info e Iscriviti</a>
+            <center><a href="{%url 'edit_iscrizioni' corso.id  %}?f={{fascia}}" class="btn btn-primary">Info e Iscriviti</a></center>
             <br>
 
           </form>
+
           </div>
 
         <br>
