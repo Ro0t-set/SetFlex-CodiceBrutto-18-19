@@ -47,8 +47,6 @@ while riga < 1417:
         user.is_staff=False
         user.save()
 
-        n_effettivo= str(n_effettivo)
-
         posizione_nome = 'A{0}'.format(n_effettivo)
         coordinate[posizione_nome].value = nome_utente
         posizione_pass = 'B{0}'.format(n_effettivo)
