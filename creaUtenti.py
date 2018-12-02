@@ -18,14 +18,18 @@ from django.contrib.auth.models import User
 
 from random import *
 import openpyxl
+from openpyxl import Workbook
 characters =  string.digits
 n_effettivo=0
-riga = 1403
+riga = 1402
+pw = openpyxl.Workbook()
+coordinate = pw.get_sheet_by_name('Sheet')
 while riga < 1417:
         riga = riga + 1
         n_effettivo=int(n_effettivo)
         n_effettivo= n_effettivo+1
         password =  "".join(choice(characters) for x in range(randint(8, 8)))
+
         excel_document = openpyxl.load_workbook('listastudenti.xlsx')
         sheet = excel_document.get_sheet_by_name('Foglio1')
         nome_utente_cognome= str(sheet.cell(row = riga, column = 2).value)
@@ -33,6 +37,8 @@ while riga < 1417:
         nome_utente= (nome_utente_nome+nome_utente_cognome)
         classe= str(sheet.cell(row = riga, column = 4).value)
         utente=str(nome_utente+classe)
+
+
         print (riga)
         print (utente)
         print (password)
@@ -41,18 +47,13 @@ while riga < 1417:
         user.is_staff=False
         user.save()
 
-
         n_effettivo= str(n_effettivo)
-        pw = openpyxl.Workbook()
-        coordinate = pw.get_sheet_by_name('Sheet')
-        posizione= eval('coordinate["A'+n_effettivo+'"]')
-        print(posizione)
-        posizione_pass= eval('coordinate["B'+n_effettivo+'"]')
-        posizione= nome_utente
-        posizione_pass= password
+
+        posizione_nome = 'A{0}'.format(n_effettivo)
+        coordinate[posizione_nome].value = nome_utente
+        posizione_pass = 'B{0}'.format(n_effettivo)
+        coordinate[posizione_pass].value = password
+
 
 
 pw.save('Pw.xlsx')
-
-
-
