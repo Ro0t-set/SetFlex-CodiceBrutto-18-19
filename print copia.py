@@ -16,7 +16,7 @@ from app.models import Iscrizione
 from app.models import Corso
 from django.shortcuts import get_object_or_404
 
-
+#d
 r=0
 riga = 0
 while riga < 400:
