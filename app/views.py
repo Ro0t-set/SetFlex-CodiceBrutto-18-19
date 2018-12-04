@@ -81,7 +81,7 @@ def home (request):
                 convalide=Approvazione.objects.filter(corso_id=corso_da_approvare_id)
                 #convalide= convalide.convalida
                 corso_da_approvare.save()
-                messages.success(request, 'Operazione eseguita con successo')
+                messages.success(request, 'Corso accettato!')
             except:
                 messages.error(request, 'Fascia gia occupata!')
 
@@ -219,31 +219,31 @@ def edit_iscrizioni(request, corso_id):
                     if contatore<classe_max:
 
                         if fasca.f1 and iscrizione.corso1_id != None:
-                            return redirect('errorefasciapiena')
+                            return redirect('edit_iscrizioni')
 
                         if fasca.f2 and iscrizione.corso2_id != None:
-                            return redirect('errorefasciapiena')
+                            return redirect('edit_iscrizioni')
 
                         if fasca.f3 and iscrizione.corso3_id != None:
-                            return redirect('errorefasciapiena')
+                            return redirect('edit_iscrizioni')
 
                         if fasca.f4 and iscrizione.corso4_id != None:
-                            return redirect('errorefasciapiena')
+                            return redirect('edit_iscrizioni')
 
                         if fasca.f5 and iscrizione.corso5_id != None:
-                            return redirect('errorefasciapiena')
+                            return redirect('edit_iscrizioni')
 
                         if fasca.f6 and iscrizione.corso6_id != None:
-                            return redirect('errorefasciapiena')
+                            return redirect('edit_iscrizioni')
 
                         if fasca.f7 and iscrizione.corso7_id != None:
-                            return redirect('errorefasciapiena')
+                            return redirect('edit_iscrizioni')
 
                         if fasca.f8 and iscrizione.corso8_id != None:
-                            return redirect('errorefasciapiena')
+                            return redirect('edit_iscrizioni')
 
                         if fasca.f9 and iscrizione.corso9_id != None:
-                            return redirect('errorefasciapiena')
+                            return redirect('edit_iscrizioni')
 
 
 
@@ -501,8 +501,9 @@ def crea(request):
                         convalida=Approvazione.objects.create(corso_id= corso.id)
                         convalida.alunno = eval('corso.studente_referente'+i)
                         convalida.save()
+                messages.success(request, 'Corso creato!')
+                return redirect('home')
 
-                return redirect('successo')
 
 
 

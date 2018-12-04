@@ -131,8 +131,8 @@ window.onload=function(){
 <ul class="messages">
     {% for message in messages %}
     <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
-        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}<div class="alert alert-danger coll-7" role="alert"> {% endif %}
-          {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}<div class="alert alert-success  coll-7" role="alert">  {% endif %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}<div class="alert alert-danger coll-7" role="alert">{% endif %}
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}<div class="alert alert-success  coll-7" role="alert">{% endif %}
         {{ message }}
     </li>
     {% endfor %}
