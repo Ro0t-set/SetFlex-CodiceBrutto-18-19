@@ -33,44 +33,104 @@
         </thead>
         </table>
 -->
+
+
+</div>
 <div class="pure-g stripeddivs">
+
+</div>
+
+<div class="pure-g stripeddivs" id="main-content">
   <div >
     <br>
      <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><h6>Mercoledì</h6></div>
-     <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre><p style="display:inline-block">1-2: </p> {% if iscrizione.corso1 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f1"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 class="titolocorso">{{iscrizione.corso1}}</h6> <a href="{% url 'elimina' iscrizione.corso1.id  %}?f=f1"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
-     <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre><p style="display:inline-block">3-4: </p> {% if iscrizione.corso2 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f2"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 class="titolocorso">{{iscrizione.corso2}}</h6> <a href="{% url 'elimina' iscrizione.corso2.id  %}?f=f2"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
-     <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre><p style="display:inline-block">5-6: </p> {% if iscrizione.corso3 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f3"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 class="titolocorso">{{iscrizione.corso3}}</h6> <a href="{% url 'elimina' iscrizione.corso3.id  %}?f=f3"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
+     <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre><p style="display:inline-block">1-2: </p> {% if iscrizione.corso1 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f1"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 style="display:inline-block;" class="titolocorso">{{iscrizione.corso1}}</h6> <a href="{% url 'elimina' iscrizione.corso1.id  %}?f=f1"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
+     <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre><p style="display:inline-block">3-4: </p> {% if iscrizione.corso2 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f2"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 style="display:inline-block;" class="titolocorso">{{iscrizione.corso2}}</h6> <a href="{% url 'elimina' iscrizione.corso2.id  %}?f=f2"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
+     <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre><p style="display:inline-block">5-6: </p> {% if iscrizione.corso3 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f3"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 style="display:inline-block;" class="titolocorso">{{iscrizione.corso3}}</h6> <a href="{% url 'elimina' iscrizione.corso3.id  %}?f=f3"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
 </div>
 <br>
 <div >
   <br>
     <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><h6>Giovedì</h6></div>
-    <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre><p style="display:inline-block">1-2: </p> {% if iscrizione.corso4 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f4"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 class="titolocorso">{{iscrizione.corso4}}</h6> <a href="{% url 'elimina' iscrizione.corso4.id  %}?f=f4"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
-    <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre><p style="display:inline-block">3-4: </p> {% if iscrizione.corso5 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f5"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 class="titolocorso">{{iscrizione.corso5}}</h6> <a href="{% url 'elimina' iscrizione.corso5.id  %}?f=f5"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
-    <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre><p style="display:inline-block">5-6: </p> {% if iscrizione.corso6 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f6"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 class="titolocorso">{{iscrizione.corso6}}</h6> <a href="{% url 'elimina' iscrizione.corso6.id  %}?f=f6"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
+    <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre><p style="display:inline-block">1-2: </p> {% if iscrizione.corso4 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f4"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 style="display:inline-block;" class="titolocorso">{{iscrizione.corso4}}</h6> <a href="{% url 'elimina' iscrizione.corso4.id  %}?f=f4"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
+    <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre><p style="display:inline-block">3-4: </p> {% if iscrizione.corso5 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f5"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 style="display:inline-block;" class="titolocorso">{{iscrizione.corso5}}</h6> <a href="{% url 'elimina' iscrizione.corso5.id  %}?f=f5"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
+    <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre><p style="display:inline-block">5-6: </p> {% if iscrizione.corso6 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f6"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 style="display:inline-block;" class="titolocorso">{{iscrizione.corso6}}</h6> <a href="{% url 'elimina' iscrizione.corso6.id  %}?f=f6"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
 </div>
 <br>
 <div >
   <br>
     <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><h6>Venerdì</h6></div>
-    <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre><p style="display:inline-block">1-2: </p> {% if iscrizione.corso7 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f7"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 class="titolocorso">{{iscrizione.corso7}}</h6> <a href="{% url 'elimina' iscrizione.corso7.id  %}?f=f7"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
-    <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre><p style="display:inline-block">3-4: </p> {% if iscrizione.corso8 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f8"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 class="titolocorso">{{iscrizione.corso8}}</h6> <a href="{% url 'elimina' iscrizione.corso8.id  %}?f=f8"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
-    <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre><p style="display:inline-block">5-6: </p> {% if iscrizione.corso9 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f9"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 class="titolocorso">{{iscrizione.corso9}}</h6> <a href="{% url 'elimina' iscrizione.corso9.id  %}?f=f9"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
+    <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre><p style="display:inline-block">1-2: </p> {% if iscrizione.corso7 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f7"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 style="display:inline-block;" class="titolocorso">{{iscrizione.corso7}}</h6> <a href="{% url 'elimina' iscrizione.corso7.id  %}?f=f7"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
+    <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre><p style="display:inline-block">3-4: </p> {% if iscrizione.corso8 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f8"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 style="display:inline-block;" class="titolocorso">{{iscrizione.corso8}}</h6> <a href="{% url 'elimina' iscrizione.corso8.id  %}?f=f8"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
+    <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre><p style="display:inline-block">5-6: </p> {% if iscrizione.corso9 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f9"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 style="display:inline-block;" class="titolocorso">{{iscrizione.corso9}}</h6> <a href="{% url 'elimina' iscrizione.corso9.id  %}?f=f9"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
 </div>
 
     </div>
 
+
+<div id="alternative">
+  <div >
+    <br>
+     <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><h6>1-2</h6></div>
+     <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre style="display:inline-block"><p style="display:inline-block">Mer: </p> {% if iscrizione.corso1 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f1"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 class="titolocorso" style="display:inline-block">{{iscrizione.corso1}}</h6> <a href="{% url 'elimina' iscrizione.corso1.id  %}?f=f1"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
+     <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre style="display:inline-block"><p style="display:inline-block">Gio: </p> {% if iscrizione.corso4 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f4"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 class="titolocorso" style="display:inline-block">{{iscrizione.corso4}}</h6> <a href="{% url 'elimina' iscrizione.corso4.id  %}?f=f4"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
+    <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre style="display:inline-block"><p style="display:inline-block">Ven: </p> {% if iscrizione.corso7 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f7"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 class="titolocorso" style="display:inline-block">{{iscrizione.corso7}}</h6> <a href="{% url 'elimina' iscrizione.corso7.id  %}?f=f7"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
+
+       </div>
+<br>
+<div>
+  <br>
+    <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><h6>3-4</h6></div>
+    <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre style="display:inline-block"><p style="display:inline-block">Mer: </p> {% if iscrizione.corso2 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f2"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 class="titolocorso" style="display:inline-block">{{iscrizione.corso2}}</h6> <a href="{% url 'elimina' iscrizione.corso2.id  %}?f=f2"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
+    <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre style="display:inline-block"><p style="display:inline-block">Gio: </p> {% if iscrizione.corso5 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f5"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 class="titolocorso" style="display:inline-block">{{iscrizione.corso5}}</h6> <a href="{% url 'elimina' iscrizione.corso5.id  %}?f=f5"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
+    <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre style="display:inline-block"><p style="display:inline-block">Ven: </p> {% if iscrizione.corso8 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f8"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 class="titolocorso" style="display:inline-block">{{iscrizione.corso8}}</h6> <a href="{% url 'elimina' iscrizione.corso8.id  %}?f=f8"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
+</div>
+<br>
+<div>
+  <br>
+    <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><h6>5-6</h6></div>
+    <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre style="display:inline-block"><p style="display:inline-block">Mer: </p> {% if iscrizione.corso3 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f3"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 class="titolocorso" style="display:inline-block">{{iscrizione.corso3}}</h6> <a href="{% url 'elimina' iscrizione.corso3.id  %}?f=f3"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
+      <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre style="display:inline-block"><p style="display:inline-block">Gio: </p> {% if iscrizione.corso6 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f6"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 class="titolocorso" style="display:inline-block">{{iscrizione.corso6}}</h6> <a href="{% url 'elimina' iscrizione.corso6.id  %}?f=f6"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
+    <div class="pure-u-lg-1-5 pure-u-md-1-1 pure-u-sm-1-1 pure-u-1-1"><div style="display:inline-block;" class="imieicorsimenu"><pre style="display:inline-block"><p style="display:inline-block">Ven: </p> {% if iscrizione.corso9 == None %}<img class="icone" src="/static/x.svg" alt="modifica">  <a href="/filtro_fasce/?f=f9"><img class="icone" src="/static/modifica.svg" alt="modifica"><a/>{% else %}<h6 class="titolocorso" style="display:inline-block">{{iscrizione.corso9}}</h6> <a href="{% url 'elimina' iscrizione.corso9.id  %}?f=f9"><img class="icone" src="/static/cestino.svg" alt="elimina"><a/>{% endif %} </pre></div></div>
+</div></div>
 {%endfor%}
 
 <script type="text/javascript">
+
+  var mobile = ""
+  var desktop = ""
+function adjust_table(width, height) {
+  var final = ""
+  if (width <= 1080) {
+    final = mobile
+  } else {
+    final = desktop;
+  }
+
+
+
+
+$('#main-content').html(final)
+}
+window.onresize = function () {
+  win = $(this);
+  adjust_table(win.width(), win.height());
+
+}
+
+
   $( document ).ready(function() {
+
     $(".titolocorso" ).each(function( index ) {
       var contenuto = $(this).html()
-      console.log(contenuto)
-      if (contenuto.length > 20) {
-        $(this).html(contenuto.slice(0,17)+"...")
+      if (contenuto.length > 23) {
+        $(this).html(contenuto.slice(0,20)+"...")
       }
   });
+  mobile = $('#main-content').html()
+  desktop = $('#alternative').html()
+  $('#alternative').html("")
+  adjust_table( $(document).width())
 });
 </script>
 {% endblock content %}
