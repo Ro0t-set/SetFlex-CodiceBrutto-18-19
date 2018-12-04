@@ -201,10 +201,13 @@ def edit_iscrizioni(request, corso_id):
 
 
     if contatore>=classe_max:
+        fasca.corso_pieno= True
+        fasca.save()
         messages.error(request, 'Corso pieno!')
         return redirect('/filtro_fasce/?f='+singoli)
     else:
-
+        fasca.corso_pieno= False
+        fasca.save()
 
         if request.method == "POST":
             form = IscrizioneForm(request.POST, instance= iscrizione)
@@ -219,31 +222,31 @@ def edit_iscrizioni(request, corso_id):
                     if contatore<classe_max:
 
                         if fasca.f1 and iscrizione.corso1_id != None:
-                            return redirect('edit_iscrizioni')
+                            return redirect('errorefasciapiena')
 
                         if fasca.f2 and iscrizione.corso2_id != None:
-                            return redirect('edit_iscrizioni')
+                            return redirect('errorefasciapiena')
 
                         if fasca.f3 and iscrizione.corso3_id != None:
-                            return redirect('edit_iscrizioni')
+                            return redirect('errorefasciapiena')
 
                         if fasca.f4 and iscrizione.corso4_id != None:
-                            return redirect('edit_iscrizioni')
+                            return redirect('errorefasciapiena')
 
                         if fasca.f5 and iscrizione.corso5_id != None:
-                            return redirect('edit_iscrizioni')
+                            return redirect('errorefasciapiena')
 
                         if fasca.f6 and iscrizione.corso6_id != None:
-                            return redirect('edit_iscrizioni')
+                            return redirect('errorefasciapiena')
 
                         if fasca.f7 and iscrizione.corso7_id != None:
-                            return redirect('edit_iscrizioni')
+                            return redirect('errorefasciapiena')
 
                         if fasca.f8 and iscrizione.corso8_id != None:
-                            return redirect('edit_iscrizioni')
+                            return redirect('errorefasciapiena')
 
                         if fasca.f9 and iscrizione.corso9_id != None:
-                            return redirect('edit_iscrizioni')
+                            return redirect('errorefasciapiena')
 
 
 
@@ -376,6 +379,8 @@ def elimina(request, corso_id):
 
 
         if form.is_valid():
+            fasca.corso_pieno= False
+            fasca.save()
             iscrizione = form.save(commit=False)
             iscrizione.user = request.user
             iscrizione.published_date = timezone.now()

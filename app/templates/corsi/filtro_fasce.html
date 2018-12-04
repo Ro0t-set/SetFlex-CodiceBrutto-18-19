@@ -39,6 +39,7 @@
             <i><h4 class="card-title">{{ corso.titolo }}</h4></i>
           </div>
           <div class="card-body">
+            {%if corso.corso_pieno == True%} <i><p style="color:red;">corso pieno</p> </i> {%endif%}   
 
             <h10>{{ corso.studente_referente1 }},
                {{ corso.studente_referente2 }} ,
