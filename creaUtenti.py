@@ -21,10 +21,10 @@ import openpyxl
 from openpyxl import Workbook
 characters =  string.digits
 n_effettivo=0
-riga = 1402
+riga = 1417
 pw = openpyxl.Workbook()
 coordinate = pw.get_sheet_by_name('Sheet')
-while riga < 1417:
+while riga < 1443:
         riga = riga + 1
         n_effettivo=int(n_effettivo)
         n_effettivo= n_effettivo+1

@@ -61,7 +61,7 @@ class Corso(models.Model):
     studente_referente4 = models.ForeignKey('auth.User', related_name='studente_referente4', blank=True, null=True)
     studente_referente5 = models.ForeignKey('auth.User', related_name='studente_referente5', blank=True, null=True)
     descrizione= models.TextField(blank=True)
-    numero_di_telefono = models.IntegerField()
+    numero_di_telefono = models.IntegerField(blank=True, null=True)
     esperti_esterni = models.CharField(max_length=100,blank=True, null=True, default="")
     aule = models.ForeignKey('Aula')
 

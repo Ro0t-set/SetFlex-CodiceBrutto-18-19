@@ -25,7 +25,7 @@ SECRET_KEY = 'uvf@*f_==2fro8v(kxfjdrnr@jyn@#fv6uiplkwybanz0atsee'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.settimanaflessibile.info', '0.0.0.0', '172.18.2.47', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['www.settimanaflessibile.tech','settimanaflessibile.tech', '0.0.0.0', '46.101.196.233', 'localhost', '127.0.0.1']
 
 
 # Application definition
