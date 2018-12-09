@@ -9,6 +9,10 @@
   vertical-align: baseline;
   background: transparent;
 }
+td {
+  white-space: nowrap;
+}
+
 table > tbody > tr > td:last-child {
   white-space: nowrap;
 }
